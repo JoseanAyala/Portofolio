@@ -3,9 +3,7 @@
     margin:0;
     box-sizing: border-box;
 }
-html {
-    font-size: 62.5%;
-}
+
 
 body{
     font-family: 'Raleway', sans-serif;
@@ -17,33 +15,58 @@ body{
 
 .header{
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgb(0,0,0,0.9), rgb(67, 67, 67, 0.9)), url("/resources/headerspace.jpg");
+    background-image: linear-gradient(to bottom, rgb(0,0,0,0.9), rgb(67, 67, 67, 0.9)), url("resources/headerspace.jpg");
     background-size: cover;
     background-position: top;
     position: relative;
     text-align: center;
-    padding: 0rem;
-}
-.right{
-    text-align: right;
 }
 
+.right{
+    float: right;
+}
+
+
+@media screen and (min-width: 320px) {
+    html {
+      font-size: 25.4%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    html {
+      font-size: 40.4%;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    html {
+      font-size: 62.5%;
+    }
+  }
+  
 .header h1{
-    font-size: 8rem;
+   font-size: 14rem;
 }
 
 .header h2{
-    font-size: 5rem;
+    font-size: 8rem;
+}
+
+.skillsFlex{
+    display: flex;
+    flex: 1;
+    height: 100vh;
 }
 
 .skills{
-    height: 100vh;
-    padding: 5rem;
+    width: 100vw;
+    margin: 0rem 10vw;
     font-size: 3rem; 
-
-    display: flex;
-    align-items: flex-start;
-    flex: 1;
+    align-self: center;
+    -webkit-box-shadow: 0px 10px 55px -1px rgba(0,0,0,0.85);
+    -moz-box-shadow: 0px 10px 55px -1px rgba(0,0,0,0.85);
+    box-shadow: 0px 10px 55px -1px rgba(0,0,0,0.85);
+    border-radius: 10px;
+    padding: 25px;
 }
 
 .skills-List_Grid{
@@ -51,11 +74,13 @@ body{
     grid-template-columns: 1fr 1fr;
     font-size: 3rem; 
     justify-self: center;
-    width: 100vw;
+    width: 100%;
 }
 
 .skills-List_Title{
+ font-size: 5rem;
  text-align: center;
+ margin-bottom: 30px;
 }
 
 .skills-List_Contents{

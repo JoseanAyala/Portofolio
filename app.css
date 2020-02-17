@@ -1,0 +1,66 @@
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: whitesmoke;
+    background-color: #3F3F3F;
+}
+
+.header{
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgb(0,0,0,0.9), rgb(67, 67, 67, 0.9)), url("/resources/headerspace.jpg");
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    text-align: center;
+    padding: 0rem;
+}
+.right{
+    text-align: right;
+}
+
+.header h1{
+    font-size: 8rem;
+}
+
+.header h2{
+    font-size: 5rem;
+}
+
+.skills{
+    height: 100vh;
+    padding: 5rem;
+    font-size: 3rem; 
+
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.skills-List_Grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 3rem; 
+    justify-self: center;
+    width: 100vw;
+}
+
+.skills-List_Title{
+ text-align: center;
+}
+
+.skills-List_Contents{
+   list-style-type: none;
+}
+#softSkills.skills-List_Contents li{  
+    text-align: right;
+}

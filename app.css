@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
@@ -28,7 +27,6 @@ body {
 
 }
 
-
 .header h1 {
   font-size: 14rem;
 }
@@ -49,8 +47,32 @@ body {
   animation-delay: 2.7s;
 }
 
+.fadeIn:nth-child(4) {
+  animation-delay: 3.5s;
+}
 
 
+#more-arrows {
+  position: absolute;
+  width: 75px;
+  bottom: 15vh;
+  height: 65px;
+  transform: translatex(-37.5px);
+  fill: whitesmoke;
+}
+#more-arrows:hover polygon {
+  fill:whitesmoke;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+#more-arrows:hover polygon.arrow-bottom {
+  -webkit-transform: translateY(-18px);
+          transform: translateY(-18px);
+}
+#more-arrows:hover polygon.arrow-top {
+  -webkit-transform: translateY(18px);
+          transform: translateY(18px);
+}
 
 .skillsFlex {
   display: flex;
@@ -133,13 +155,11 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  #softSkills.skills-List_Contents li,
-  #softSkills.skills-List_Contents lh {
+  #softSkills.skills-List_Contents {
     text-align: right;
   }
 
-  #technicalSkills.skills-List_Contents li,
-  #technicalSkills.skills-List_Contents lh {
+  #technicalSkills.skills-List_Contents {
     text-align: left;
   }
 }

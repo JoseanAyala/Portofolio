@@ -1,3 +1,7 @@
+:root{
+  --appPrimaryBgColor: #3F3F3F;
+  --appPrimaryFontColor: #F5F5F5;
+}
 * {
   padding: 0;
   margin: 0;
@@ -8,8 +12,8 @@ body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: whitesmoke;
-  background-color: #3F3F3F;
+  color: var(--appPrimaryFontColor);
+  background-color: var(--appPrimaryBgColor);
 }
 
 .header {
@@ -59,10 +63,10 @@ body {
   bottom: 15vh;
   height: 65px;
   transform: translatex(-37.5px);
-  fill: whitesmoke;
+  fill: var(--appPrimaryFontColor);
 }
 #more-arrows:hover polygon {
-  fill:whitesmoke;
+  fill: var(--appPrimaryFontColor);
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
 }
@@ -76,7 +80,7 @@ body {
 }
 
 polygon {
-  fill: whitesmoke;
+  fill: var(--appPrimaryFontColor);
   -webkit-transition: all .2s ease-out;
   transition: all .2s ease-out;
 }
@@ -87,6 +91,12 @@ polygon.arrow-top {
   opacity: 0.5;
 }
 
+.space-wrap{
+  background-image: linear-gradient(to bottom,  rgb(67, 67, 67, 0.999), rgb(67, 67, 67, 0.97)), url("resources/spacetexture.jpg");
+  background-size: cover;
+  background-position: top;
+}
+
 .skillsFlex {
   display: flex;
   flex: 1;
@@ -94,6 +104,8 @@ polygon.arrow-top {
   min-height: 100vh;
   position: relative;
   flex-direction: column;
+  
+
   /* justify-content: space-between; */
 }
 
@@ -104,6 +116,7 @@ polygon.arrow-top {
 }
 
 .skills {
+  background-color: var(--appPrimaryBgColor);
   align-self: center; 
   width: 80vw;
   height: auto;
@@ -137,82 +150,88 @@ polygon.arrow-top {
 }
 
 
-
-
-@media screen and (min-width: 0px) {
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
   html {
-    font-size: 23.4%;
+    font-size: 25%;
   }
-
+  
   .skills-List_Grid {
     grid-template-columns: 1;
   }
-
+  
   #softSkills.skills-List_Contents {
     text-align: center;
   }
-
+  
   #technicalSkills.skills-List_Contents  {
     text-align: center;
   }
+  
 }
-@media screen and (min-width: 640px) {
-  html {
-    font-size: 25.4%;
-  }
 
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  html {
+    font-size: 27%;
+  }
+  
   .skills-List_Grid {
     grid-template-columns: 1fr 1fr;
   }
-
+  
   #softSkills.skills-List_Contents {
     text-align: right;
   }
+  
+  #technicalSkills.skills-List_Contents  {
+    text-align: left;
+  }
+  
+}
 
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 30%;
+  }
+  
+  .skills-List_Grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  #softSkills.skills-List_Contents {
+    text-align: right;
+  }
+  
   #technicalSkills.skills-List_Contents  {
     text-align: left;
   }
 }
-@media screen and (min-width: 720px) {
-  html {
-    font-size: 30.4%;
-  }
 
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  html {
+    font-size: 40%;
+  }
+  
   .skills-List_Grid {
     grid-template-columns: 1fr 1fr;
   }
-
+  
   #softSkills.skills-List_Contents {
     text-align: right;
   }
-
+  
   #technicalSkills.skills-List_Contents  {
     text-align: left;
   }
 }
 
-@media screen and (min-width: 968px) {
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
   html {
-    font-size: 40.4%;
-  }
-
-  .skills-List_Grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  #softSkills.skills-List_Contents {
-    text-align: right;
-  }
-
-  #technicalSkills.skills-List_Contents  {
-    text-align: left;
-  }
-
-} 
-
-@media screen and (min-width: 1200px) {
-  html {
-    font-size: 62.5%;
+    font-size: 50%;
   }
 
   .skills-List_Grid {
@@ -227,4 +246,3 @@ polygon.arrow-top {
     text-align: left;
   }
 }
-

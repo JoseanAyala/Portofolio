@@ -177,15 +177,15 @@ polygon.arrow-top {
   }
   
   .skills-List_Grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1;
   }
   
   #softSkills.skills-List_Contents {
-    text-align: right;
+    text-align: center;
   }
   
   #technicalSkills.skills-List_Contents  {
-    text-align: left;
+    text-align: center;
   }
   
 }

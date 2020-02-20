@@ -16,7 +16,7 @@
 <body>
     <div class="header">
         <h1 class="fadeIn animated">Hi,</h1>
-        <h2 class="fadeIn animated">My name is Josean Ayala</h2>
+        <h2 class="fadeIn animated">My Name is Josean Ayala</h2>
         <h2 class="fadeIn animated">and I'm a Software Developer.</h2>
        
         <a class="fadeIn animated" href="#skills">
@@ -63,24 +63,31 @@
                
                 </div>
             </div>
-            <!-- <a class="" href="#projects" id="skillsAnchor">
+          <a class="" href="#projects" id="skillsAnchor">
                 <svg id="more-arrows">
                     <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 " />
                     <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 " />
                     <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 " />
                 </svg>
-           </a> -->
+           </a> 
         </div>
 
     </div>
     
 
-    <div class="projects" id="projects" style="font-size:10rem">
+    <!-- <div class="projects" id="projects" style="font-size:10rem">
         align projects middle in iframe then
-    </div>
+    </div> -->
 
-    <div class="footer" style="font-size:10rem">
-        get in touch
+    <div class="contact">
+        <form name="contact" method="POST" data-netlify="true">
+            <div class="senderInfo">
+                <input id="senderName" type="text" placeholder="Name (Required)">
+                <input type="email" name="email" id="senderEmail" placeholder="Email (Required)">
+            </div>
+            <input id="senderMessage" type="text" placeholder="Message"><br>
+            <button type="submit" style="width: 80px; height: 40px;">Send Message</button>
+        </form>
     </div>
 </div>
 

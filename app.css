@@ -104,9 +104,6 @@ polygon.arrow-top {
   min-height: 100vh;
   position: relative;
   flex-direction: column;
-  
-
-  /* justify-content: space-between; */
 }
 
 #skillsDescription{
@@ -144,11 +141,24 @@ polygon.arrow-top {
   list-style-type: none;
 }
 
-#skillsAnchor {
-  align-self: center;
-  transform: translatex(-37.5px);
+#skills #more-arrows{
+  display: block;
+  position: initial;
+  transform: translatex(calc(50vw - 37.5px));
+  margin-top: 5vh;
 }
 
+.contact{
+  min-height: 100vh;
+}
+
+.senderInfo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5vw;
+  width: 80vw;
+  justify-self: center;
+}
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {

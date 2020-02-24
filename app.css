@@ -1,6 +1,7 @@
 :root{
   --appPrimaryBgColor: #3F3F3F;
   --appPrimaryFontColor: #F5F5F5;
+  --appBottomNav: 7vh;
 }
 * {
   padding: 0;
@@ -16,28 +17,33 @@ body {
   background-color: var(--appPrimaryBgColor);
 }
 
-.header {
+.container {
   height: auto;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.9), rgb(67, 67, 67, 0.9)), url("resources/headerspace.jpg");
   background-size: cover;
   background-position: top;
-  position: relative;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+.containerHeading{
+  padding: 0 5vw;
 }
 
-.header h1,
-.header h2 {
-  padding: 0 10vw;
+.headingPrimary {
+  font-size: 8em;
+  padding: 0;
+  margin: 0;
+  padding-top: 5vh;
 
 }
-
-.header h1 {
-  font-size: 14rem;
+.headingSecundary {
+  font-size: 4.5rem;
 }
 
-.header h2 {
-  font-size: 8rem;
+.headingTertiary{
+  color: #8e8e8f;
+  font-size: 3.5rem;
 }
 
 .fadeIn:nth-child(1) {
@@ -55,46 +61,34 @@ body {
 .fadeIn:nth-child(4) {
   animation-delay: 3.5s;
 }
-
-
-#more-arrows {
-  position: absolute;
-  width: 75px;
-  bottom: 15vh;
-  height: 65px;
-  transform: translatex(-37.5px);
-  fill: var(--appPrimaryFontColor);
+.owl-carousel{
+  flex: 1;
 }
-#more-arrows:hover polygon {
-  fill: var(--appPrimaryFontColor);
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
-}
-#more-arrows:hover polygon.arrow-bottom {
-  -webkit-transform: translateY(-18px);
-          transform: translateY(-18px);
-}
-#more-arrows:hover polygon.arrow-top {
-  -webkit-transform: translateY(18px);
-          transform: translateY(18px);
+.containerContentBox{
+  justify-self: center;
+  align-self: center;
+  width: 50rem;
+  background-color: black;
+  border-radius: 25px;
+  margin: 10rem 0;
+  font-size: 3rem;
 }
 
-polygon {
-  fill: var(--appPrimaryFontColor);
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
-}
-polygon.arrow-middle {
-  opacity: 0.75;
-}
-polygon.arrow-top {
-  opacity: 0.5;
+
+.bottomNav{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100vw;
+  height: var(--appBottomNav);
+  left: 0;;
 }
 
-.space-wrap{
-  background-image: linear-gradient(to bottom,  rgb(67, 67, 67, 0.999), rgb(67, 67, 67, 0.97)), url("resources/spacetexture.jpg");
-  background-size: cover;
-  background-position: top;
+.bottomNav > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #323133;
+    font-size: 4rem;
 }
 
 .skillsFlex {

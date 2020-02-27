@@ -1,7 +1,7 @@
 :root{
-  --appPrimaryBgColor: #3F3F3F;
+  --appPrimaryBgColor: #161616;
   --appPrimaryFontColor: #F5F5F5;
-  --appBottomNav: 7vh;
+  --appBottomNav: 2.04cm;
 }
 * {
   padding: 0;
@@ -16,11 +16,30 @@ body {
   color: var(--appPrimaryFontColor);
   background-color: var(--appPrimaryBgColor);
 }
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+  cursor: pointer;
+}
+.HIGHLIGHT{
+   background-color:rgb(67, 67, 67, 0.9) !important;
+}
+
+.HDN{
+  display: none !important;
+}
+
+.DISPLAY {
+  display: initial;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+
+}
 
 .container {
   height: auto;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.9), rgb(67, 67, 67, 0.9)), url("resources/headerspace.jpg");
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.9),rgb(0, 0, 0, 0.9)), url("resources/headerspace.jpg");
   background-size: cover;
   background-position: top;
   display: flex;
@@ -44,6 +63,7 @@ body {
 .headingTertiary{
   color: #8e8e8f;
   font-size: 3.5rem;
+  margin-bottom: 25px;
 }
 
 .fadeIn:nth-child(1) {
@@ -64,15 +84,34 @@ body {
 .owl-carousel{
   flex: 1;
 }
-.containerContentBox{
-  justify-self: center;
-  align-self: center;
-  width: 50rem;
-  background-color: black;
-  border-radius: 25px;
-  margin: 10rem 0;
+
+.containerContentBox {
+  background-color: var(--appPrimaryBgColor);
+  align-self: center; 
+  height: auto;
+  padding: 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0 12px 5px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow:0px 0 12px 5px rgba(0, 0, 0, 0.85);
+  box-shadow:0px 0 12px 5px rgba(0, 0, 0, 0.85);
   font-size: 3rem;
 }
+
+
+
+.descriptionPrimary {
+  margin-top: 10px;
+  font-size: 4.2rem;
+}
+.descriptionSecundary {
+  font-size: 3.5rem;
+}
+.descriptionTertiary {
+  margin-top: 10px;
+  font-size: 3rem;
+}
+
+
 
 
 .bottomNav{
@@ -83,39 +122,33 @@ body {
   left: 0;;
 }
 
-.bottomNav > * {
+.bottomNav > div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #323133;
-    font-size: 4rem;
+    background-color: var(--appPrimaryBgColor);
 }
+
+.bottomNav i {
+  font-size: 3.5rem;
+}
+
+.bottomNav p {
+  margin-top: 5px;
+  font-size: 1.5rem;
+}
+
 
 .skillsFlex {
-  display: flex;
   flex: 1;
-  height: auto;
-  min-height: 100vh;
-  position: relative;
-  flex-direction: column;
-}
-
-#skillsDescription{
   align-self: center;
-  padding: 10vh 10vw;
-  font-size: 6rem;
+  justify-self: center;
+  position: relative;
 }
 
-.skills {
-  background-color: var(--appPrimaryBgColor);
-  align-self: center; 
+#skillsContent > .containerContentBox{
   width: 80vw;
-  height: auto;
-  padding: 25px;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 10px 55px -1px rgba(0, 0, 0, 0.85);
-  -moz-box-shadow: 0px 10px 55px -1px rgba(0, 0, 0, 0.85);
-  box-shadow: 0px 10px 55px -1px rgba(0, 0, 0, 0.85);
 }
 
 .skills-List_Grid {
@@ -125,34 +158,47 @@ body {
   width: 100%;
 }
 
-.skills-List_Title {
-  display: block;
-  font-size: 6rem;
-  padding: 30px 0 ;
-}
-
 .skills-List_Contents {
   list-style-type: none;
 }
 
-#skills #more-arrows{
+#skillsDescription{
+  align-self: center;
+  padding: 10vh 10vw;
+  font-size: 4rem;
+}
+
+.skills-List_Title {
   display: block;
-  position: initial;
-  transform: translatex(calc(50vw - 37.5px));
-  margin-top: 5vh;
+  font-size: 6rem;
+  padding: 3rem 0 ;
 }
 
 .contact{
-  min-height: 100vh;
+  align-self: center;
+  justify-self: center;
+  flex: 1;
+
 }
 
-.senderInfo{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 5vw;
+.contact input {
+  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+  font-size: 3.5rem;
+	height: 45px;
   width: 80vw;
-  justify-self: center;
+  color: var(--appPrimaryFontColor);
+  margin: 5rem 0;
 }
+
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {

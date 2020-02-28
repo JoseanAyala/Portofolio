@@ -1,7 +1,8 @@
+/* Application */
 :root{
   --appPrimaryBgColor: #161616;
   --appPrimaryFontColor: #F5F5F5;
-  --appBottomNav: 2.04cm;
+  --appBottomNav: 10vh;
 }
 * {
   padding: 0;
@@ -21,8 +22,15 @@ a {
   text-decoration: inherit; /* no underline */
   cursor: pointer;
 }
+img{
+  width: auto;
+  /* max-width: 425px; */
+  height: 250px;
+  float: center;
+}
+
 .HIGHLIGHT{
-   background-color:rgb(67, 67, 67, 0.9) !important;
+   background-color:rgb(67, 67, 67, 1) !important;
 }
 
 .HDN{
@@ -45,16 +53,15 @@ a {
   display: flex;
   flex-flow: column;
 }
+
+/* Header */
 .containerHeading{
   padding: 0 5vw;
 }
 
 .headingPrimary {
-  font-size: 8em;
-  padding: 0;
-  margin: 0;
-  padding-top: 5vh;
-
+  font-size: 7em;
+  padding-top: 7px;
 }
 .headingSecundary {
   font-size: 4.5rem;
@@ -81,6 +88,9 @@ a {
 .fadeIn:nth-child(4) {
   animation-delay: 3.5s;
 }
+
+
+/*  Main content  */
 .owl-carousel{
   flex: 1;
 }
@@ -97,8 +107,6 @@ a {
   font-size: 3rem;
 }
 
-
-
 .descriptionPrimary {
   margin-top: 10px;
   font-size: 4.2rem;
@@ -110,16 +118,13 @@ a {
   margin-top: 10px;
   font-size: 3rem;
 }
-
-
-
-
+/* Bottom Nav */
 .bottomNav{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100vw;
   height: var(--appBottomNav);
-  left: 0;;
+  margin-top: 25px;
 }
 
 .bottomNav > div {
@@ -139,6 +144,7 @@ a {
   font-size: 1.5rem;
 }
 
+/* Skills */
 
 .skillsFlex {
   flex: 1;
@@ -148,12 +154,13 @@ a {
 }
 
 #skillsContent > .containerContentBox{
-  width: 80vw;
+  width: 90vw;
+  padding: 0 25px 25px 25px;
 }
 
 .skills-List_Grid {
   display: grid;
-  font-size: 4rem;
+  font-size: 3.5rem;
   justify-self: center;
   width: 100%;
 }
@@ -170,15 +177,15 @@ a {
 
 .skills-List_Title {
   display: block;
-  font-size: 6rem;
+  font-size: 5.5rem;
   padding: 3rem 0 ;
 }
 
+/* Contact Form */
 .contact{
   align-self: center;
   justify-self: center;
   flex: 1;
-
 }
 
 .contact input {
@@ -196,7 +203,22 @@ a {
 	height: 45px;
   width: 80vw;
   color: var(--appPrimaryFontColor);
-  margin: 5rem 0;
+  margin: 5rem 5vw;
+  width: 90vw;
+}
+
+.btnSubmit{
+  align-self: center;
+  display: inline-block;
+  background-color: var(--appPrimaryBgColor);
+  color: var(--appPrimaryFontColor);
+  font-size: 4rem;
+  line-height: 24px;
+  padding: 2rem 4rem;
+  border: none;
+  cursor: pointer;
+  width: 80vw;
+  margin: 0 10vw;
 }
 
 
@@ -216,6 +238,10 @@ a {
   
   #technicalSkills.skills-List_Contents  {
     text-align: center;
+  }
+
+  #projectsContent .containerContentBox{
+    margin: 0 5vw;
   }
   
 }
@@ -237,7 +263,9 @@ a {
   #technicalSkills.skills-List_Contents  {
     text-align: center;
   }
-  
+  #projectsContent .containerContentBox{
+    margin: 0 5vw;
+  }
 }
 
 /* Portrait tablets and small desktops */
@@ -294,5 +322,8 @@ a {
 
   #technicalSkills.skills-List_Contents {
     text-align: left;
+  }
+  #projectsContent .containerContentBox{
+    width: 70%;
   }
 }

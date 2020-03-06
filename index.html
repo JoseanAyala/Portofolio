@@ -23,50 +23,87 @@
 <body>
     <div class="container">
 
-        <div class="containerHeading">
-            <h1 class="fadeIn animated headingPrimary">Hi,</h1>
-            <h2 class="fadeIn animated headingSecundary">My Name is Josean Ayala and I'm a Software Developer</h2>
-            <p class="fadeIn animated headingTertiary">Located in San Juan, Puerto Rico.</p>
+
+        <div id="aboutContent" class="aboutMe DISPLAY">
+            <div class="">
+                <h1 class="fadeIn animated headingPrimary">Hi,</h1>
+                <h2 class="fadeIn animated headingSecundary">My Name is Josean Ayala and I'm a Software Developer</h2>
+                <p class="fadeIn animated headingTertiary">Located in San Juan, Puerto Rico.</p>
+                
+                <div class="fadeIn animated">
+
+                
+                <p class="descriptionPrimary">
+                    Through my career I have worked on enterprise resource managment and civic engagement applications.
+                    Building projects and constant learning has always been my passion.
+                </p>
+
+                <p class="aboutKnowMore">
+                    Want to know more?
+                </p>
+                <div class="icons">
+                    <a href="https://pr.linkedin.com/in/joseanayala" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/scattyydev" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                    <a href="./resources/joseanResume.pdf" target="_blank"><i class="fas fa-file-alt"></i></a>
+                </div>
+            </div>
+            </div>
         </div>
 
+        <div class="HDN" id="projectsContent">
+            <div class="containerHeading" style="padding-top: 25px;">
+                <h2 class="headingSecundary">Preview of my work.</h2>
+                <p class="headingTertiary">Click to view.</p>
+            </div>
 
+            <div class="owl-carousel">
 
-        <div class="owl-carousel DISPLAY" id="projectsContent">
-            <a href="https://one.rocksolid.com/" target="_blank">
-                <div class="containerContentBox">
-                    <img src="./resources/mobile.jpg" alt="app">
-                    <p class="descriptionPrimary">
-                        Product: One Link
-                    </p>
-                    <p class="descriptionSecundary">
-                        Company: Rock Solid Technologies Inc.
-                    </p>
-                    <p class="descriptionTertiary">
-                        One Link is an enterprise civic engagement platform, connecting citizens with their local
-                        government.
-                    </p>
-                </div>
-            </a>
-            <a href="https://github.com/JoseanAyala/SQLScriptBatchAutoRun" target="_blank">
-                <div class="containerContentBox">
-                    <img src="./resources/MSSQLServer.png" alt="app">
-                    <p class="descriptionPrimary">
-                        Tool: SQL Server File Excecution 
-                    </p>
-                    <p class="descriptionSecundary">
-                        By: Me
-                    </p>
-                    <p class="descriptionTertiary">
-                        This tool lets users look up the files with a .sql extension in a directory lets the user choose the ones that will be executed via command prompt.
-                    </p>
-                </div>
-            </a>
+                <a href="https://one.rocksolid.com/" target="_blank">
+                    <div class="containerContentBox">
+                        <img src="./resources/mobile.jpg" alt="app">
+                        <p class="descriptionPrimary">
+                            Product: One Link
+                        </p>
+                        <p class="descriptionSecundary">
+                            Company: Rock Solid Technologies Inc.
+                        </p>
+                        <p class="descriptionTertiary">
+                            One Link is an enterprise civic engagement platform, connecting citizens with their local
+                            government.
+                        </p>
+                    </div>
+                </a>
+                <a href="https://github.com/JoseanAyala/SQLScriptBatchAutoRun" target="_blank">
+                    <div class="containerContentBox">
+                        <img src="./resources/MSSQLServer.png" alt="app">
+                        <p class="descriptionPrimary">
+                            Tool: SQL Server File Excecution
+                        </p>
+                        <p class="descriptionSecundary">
+                            By: Me
+                        </p>
+                        <p class="descriptionTertiary">
+                            This tool lets users look up the files with a .sql extension in a directory lets the user
+                            choose
+                            the ones that will be executed via command prompt.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
         </div>
 
 
 
         <div class="skillsFlex HDN" id="skillsContent">
             <!-- <h1 id="skillsDescription">Some of my skills include...</h1> -->
+
+            <div style="padding: 25px 0 15vh 0;">
+                <h2 class="headingSecundary">My skills include:</h2>
+            </div>
+
+
+
             <div class="containerContentBox">
                 <div class="skills-List_Grid">
                     <ul class="skills-List_Contents" id="technicalSkills">
@@ -96,16 +133,24 @@
         </div>
 
         <div class="contact HDN" id="contactContent">
+
+            <div style="padding: 25px 5vw 15vh 5vw;">
+                <h2 class="headingSecundary">Questions? Message Me!</h2>
+            </div>
             <form name="contact" method="POST" data-netlify="true">
                 <input name="Name" type="text" id="senderName" placeholder="Name">
                 <input name="Email" type="email" id="senderEmail" placeholder="Email">
-                <input name="Message" type="text" id="senderMessage" placeholder="Message">           
+                <input name="Message" type="text" id="senderMessage" placeholder="Message">
                 <button type="submit" class="btnSubmit">Send Message</button>
             </form>
         </div>
 
         <div class="bottomNav">
-            <div class="HIGHLIGHT" id="projects">
+            <div id="about">
+                <i class="fas fa-user-circle"></i>
+                <p>About</p>
+            </div>
+            <div id="projects">
                 <i class="fas fa-project-diagram"></i>
                 <p>Projects</p>
             </div>

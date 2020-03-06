@@ -2,7 +2,8 @@
 :root{
   --appPrimaryBgColor: #161616;
   --appPrimaryFontColor: #F5F5F5;
-  --appBottomNav: 10vh;
+  --appLinkColorLight: #005da7;
+  --appBottomNav: ;
 }
 * {
   padding: 0;
@@ -16,16 +17,17 @@ body {
   line-height: 1.7;
   color: var(--appPrimaryFontColor);
   background-color: var(--appPrimaryBgColor);
+  overflow-x: hidden;
 }
 a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
   cursor: pointer;
 }
+
 img{
-  width: auto;
-  /* max-width: 425px; */
-  height: 250px;
+  width: 100%;
+  height: auto;
   float: center;
 }
 
@@ -52,15 +54,17 @@ img{
   background-position: top;
   display: flex;
   flex-flow: column;
+  justify-content: space-between;
 }
 
 /* Header */
 .containerHeading{
   padding: 0 5vw;
+  margin-bottom: 10vh;
 }
 
 .headingPrimary {
-  font-size: 7em;
+  font-size: 7rem;
   padding-top: 7px;
 }
 .headingSecundary {
@@ -88,11 +92,34 @@ img{
 .fadeIn:nth-child(4) {
   animation-delay: 3.5s;
 }
+.aboutMe{
+  font-size: 4rem;
+  padding: 0 5vw;
+  text-align: center;
+}
+
+.aboutKnowMore{
+  font-size: 5rem;
+  margin-top: 10vh;
+}
+
+.icons{
+  margin-top: 2.5rem;
+}
+.icons a {
+  color: var(--appLinkColorLight);
+  font-size: 5rem;
+  margin: 0 20px;
+}
 
 
 /*  Main content  */
 .owl-carousel{
   flex: 1;
+}
+
+.owl-carousel > div {
+  align-self: center;
 }
 
 .containerContentBox {
@@ -121,7 +148,7 @@ img{
 /* Bottom Nav */
 .bottomNav{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   width: 100vw;
   height: var(--appBottomNav);
   margin-top: 25px;
@@ -133,15 +160,17 @@ img{
     justify-content: center;
     align-items: center;
     background-color: var(--appPrimaryBgColor);
+  
 }
 
 .bottomNav i {
-  font-size: 3.5rem;
+  color: var(--appLinkColorLight);
+  font-size: 3rem;
 }
 
 .bottomNav p {
   margin-top: 5px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 /* Skills */
@@ -210,7 +239,7 @@ img{
 .btnSubmit{
   align-self: center;
   display: inline-block;
-  background-color: var(--appPrimaryBgColor);
+  background-color: var(--appLinkColorLight);
   color: var(--appPrimaryFontColor);
   font-size: 4rem;
   line-height: 24px;

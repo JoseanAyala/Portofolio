@@ -31,6 +31,11 @@ $(document).ready(function(){
     $('.bottomNav').on('click', 'div',  function () {
         var selectedElement = $(this);
         var SelectedID = selectedElement.attr('id');
+
+        if ($('*').hasClass('fadeIn')){
+            $('.fadeIn').removeClass('fadeIn animated');
+        }
+
         
         //Remove Previous HIGHLIGHT
         $('.HIGHLIGHT').removeClass('HIGHLIGHT');

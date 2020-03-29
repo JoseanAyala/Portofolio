@@ -10,54 +10,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="stylesheet" href="./resources/animate.css">
+    <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="./resources/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="./resources/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
     <script src="./resources/OwlCarousel2-2.3.4/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="/css/app.css">
     <script src="app.js"></script>
 </head>
 
 <body>
-    <div class="container">
 
+    <div class="navigation">
+        <div class="topNav">
+            <div class="pageAuthor">
+                <span> Josean Dev </span>
+            </div>
+            
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="container">
 
         <div id="aboutContent" class="aboutMe DISPLAY">
             <div class="">
                 <h1 class="fadeIn animated headingPrimary">Hi,</h1>
                 <h2 class="fadeIn animated headingSecundary">My Name is Josean Ayala and I'm a Software Developer</h2>
                 <p class="fadeIn animated headingTertiary">Located in San Juan, Puerto Rico.</p>
-                
+
                 <div class="fadeIn animated">
+                    <p class="descriptionPrimary">
+                        Through my career I have worked on enterprise resource managment and civic engagement
+                        applications.
+                        Building projects and constant learning has always been my passion.
+                    </p>
 
-                
-                <p class="descriptionPrimary">
-                    Through my career I have worked on enterprise resource managment and civic engagement applications.
-                    Building projects and constant learning has always been my passion.
-                </p>
+                    <p class="aboutKnowMore">
+                        Want to know more?
+                    </p>
 
-                <p class="aboutKnowMore">
-                    Want to know more?
-                </p>
-                <div class="icons">
-                    <a href="https://pr.linkedin.com/in/joseanayala" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/scattyydev" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                    <a href="./resources/joseanResume.pdf" target="_blank"><i class="fas fa-file-alt"></i></a>
+                    <div class="icons">
+                        <a href="https://pr.linkedin.com/in/joseanayala" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/scattyydev" target="_blank"><i
+                                class="fab fa-twitter-square"></i></a>
+                        <a href="./resources/joseanResume.pdf" target="_blank"><i class="fas fa-file-alt"></i></a>
+                    </div>
+
                 </div>
-            </div>
             </div>
         </div>
 
-        <div class="HDN" id="projectsContent">
+        <div id="projectsContent" class="HDN">
             <div class="containerHeading" style="padding-top: 25px;">
                 <h2 class="headingSecundary">Preview of my work.</h2>
                 <p class="headingTertiary">Click to view.</p>
             </div>
 
             <div class="owl-carousel">
-
                 <a href="https://one.rocksolid.com/" target="_blank">
                     <div class="containerContentBox">
                         <img src="./resources/mobile.jpg" alt="app">
@@ -90,19 +106,12 @@
                     </div>
                 </a>
             </div>
-
         </div>
 
-
-
-        <div class="skillsFlex HDN" id="skillsContent">
-            <!-- <h1 id="skillsDescription">Some of my skills include...</h1> -->
-
+        <div id="skillsContent" class="skillsFlex HDN">
             <div style="padding: 25px 0 15vh 0;">
                 <h2 class="headingSecundary">My skills include:</h2>
             </div>
-
-
 
             <div class="containerContentBox">
                 <div class="skills-List_Grid">
@@ -132,8 +141,7 @@
             </div>
         </div>
 
-        <div class="contact HDN" id="contactContent">
-
+        <div id="contactContent" class="contact HDN">
             <div style="padding: 25px 5vw 15vh 5vw;">
                 <h2 class="headingSecundary">Questions? Message Me!</h2>
             </div>
@@ -144,24 +152,23 @@
                 <button type="submit" class="btnSubmit">Send Message</button>
             </form>
         </div>
-
-        <div class="bottomNav">
-            <div id="about">
-                <i class="fas fa-user-circle"></i>
-                <p>About</p>
-            </div>
-            <div id="projects">
-                <i class="fas fa-project-diagram"></i>
-                <p>Projects</p>
-            </div>
-            <div id="skills">
-                <i class="fas fa-book"></i>
-                <p>Skills</p>
-            </div>
-            <div id="contact">
-                <i class="fas fa-address-card"></i>
-                <p>Contact</p>
-            </div>
+    </div>
+    <div class="bottomNav">
+        <div id="about">
+            <i class="fas fa-user-circle"></i>
+            <p>About</p>
+        </div>
+        <div id="projects">
+            <i class="fas fa-project-diagram"></i>
+            <p>Projects</p>
+        </div>
+        <div id="skills">
+            <i class="fas fa-book"></i>
+            <p>Skills</p>
+        </div>
+        <div id="contact">
+            <i class="fas fa-address-card"></i>
+            <p>Contact</p>
         </div>
     </div>
 </body>

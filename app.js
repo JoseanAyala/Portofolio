@@ -1,3 +1,20 @@
+const appTheme = {
+    'dark' : [
+        '--appPrimaryBgColor:#161616',
+        '--appPrimaryFontColor:#F5F5F5',
+        '--appLinkColorLight:#005da7',
+        '--appImageOverlayColor:rgb(0, 0, 0, 0.9)',
+        '--appShadowColor:#000'
+    ],
+    'light' : [
+        '--appPrimaryBgColor:#F5F5F5',
+        '--appPrimaryFontColor:#161616',
+        '--appLinkColorLight:#005da7',
+        '--appImageOverlayColor:rgb(255, 255, 255, 0.94)',
+        '--appShadowColor:#DFE1E5'
+    ]
+}
+
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         center: true,
@@ -35,17 +52,31 @@ $(document).ready(function(){
         if ($('*').hasClass('fadeIn')){
             $('.fadeIn').removeClass('fadeIn animated');
         }
-
-        
         //Remove Previous HIGHLIGHT
         $('.HIGHLIGHT').removeClass('HIGHLIGHT');
+
         //Add HIGHLIGHT to current
         selectedElement.addClass('HIGHLIGHT');
         
         //Hide previous element
         $('.DISPLAY').removeClass('DISPLAY').addClass('HDN');
+
         //Display new element
         $('#' + SelectedID + 'Content').removeClass('HDN').addClass('DISPLAY');
+    });
+
+    $('.switch > input').click(function(){
+        if($(this).is(':checked')){
+            appTheme.light.map((prop)=>{
+                var property = prop.split(':')
+                document.documentElement.style.setProperty(property[0], property[1]);
+            });
+        } else {
+            appTheme.dark.map((prop)=>{
+                var property = prop.split(':')
+                document.documentElement.style.setProperty(property[0], property[1]);
+            });
+        }
     });
 
   });

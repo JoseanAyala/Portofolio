@@ -30,7 +30,7 @@ a {
 }
 
 img{
-  width: 47.5rem !important;
+  /* width: 47.5rem !important; */
   max-width: 500px;
   height: auto;
   margin-left: auto;

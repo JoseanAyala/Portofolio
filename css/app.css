@@ -143,6 +143,24 @@ img{
   font-size: 3rem;
 }
 
+
+.containerContentBoxFlex {
+  background-color: var(--appPrimaryBgColor);
+  align-self: center; 
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 25px;
+  margin-top:20px !important;
+  margin-bottom:20px !important;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0 12px 5px var(--appShadowColor);
+  -moz-box-shadow:0px 0 12px 5px var(--appShadowColor);
+  box-shadow:0px 0 12px 5px var(--appShadowColor);
+  font-size: 3rem;
+}
+
 .descriptionPrimary {
   margin-top: 10px;
   font-size: 4.2rem;
@@ -154,6 +172,19 @@ img{
   margin-top: 10px;
   font-size: 3rem;
 }
+
+.projectDescriptionPrimary {
+  margin-top: 10px;
+  font-size: 3.2rem;
+}
+.projectDescriptionSecundary {
+  font-size: 2.5rem;
+}
+.projectDescriptionTertiary {
+  margin-top: 10px;
+  font-size: 2rem;
+}
+
 .navigation{
   position: fixed;
   top:0;

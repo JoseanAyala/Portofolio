@@ -15,6 +15,20 @@ const appTheme = {
     ]
 }
 
+
+  const setContentHeight = function() {
+    $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content')
+    var height = 0 ;
+    var elements = document.querySelectorAll(".owl-carousel .containerContentBox")
+    for (var index = 0; index < elements.length; index++) height = height < elements[index].offsetHeight ? elements[index].offsetHeight : height;        
+    $('.owl-carousel .containerContentBox').attr('style', 'height:'+ height +'px')
+  }
+
+$(window).resize(function () {
+    clearTimeout(window.resizedFinished);
+    window.resizedFinished = setTimeout(setContentHeight, 250);
+})
+
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         center: true,
@@ -63,6 +77,9 @@ $(document).ready(function(){
 
         //Display new element
         $('#' + SelectedID + 'Content').removeClass('HDN').addClass('DISPLAY');
+
+        if (SelectedID === 'projects')
+            setTimeout(setContentHeight, 300);
     });
 
     $('.switch > input').click(function(){
@@ -80,3 +97,5 @@ $(document).ready(function(){
     });
 
   });
+
+

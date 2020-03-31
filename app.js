@@ -16,11 +16,13 @@ const appTheme = {
 }
 
 const setContentHeight = function () {
-    $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content')
-    var height = 0;
-    var elements = document.querySelectorAll(".owl-carousel .containerContentBox")
-    for (var index = 0; index < elements.length; index++) height = height < elements[index].offsetHeight ? elements[index].offsetHeight : height;
-    $('.owl-carousel .containerContentBox').attr('style', 'height:' + height + 'px')
+    if ($('.HIGHLIGHT').attr('id') === 'projects') {
+        $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content')
+        var height = 0;
+        var elements = document.querySelectorAll(".owl-carousel .containerContentBox")
+        for (var index = 0; index < elements.length; index++) height = height < elements[index].offsetHeight ? elements[index].offsetHeight : height;
+        $('.owl-carousel .containerContentBox').attr('style', 'height:' + height + 'px')
+    }
 }
 
 $(window).resize(function () {

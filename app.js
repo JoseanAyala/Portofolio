@@ -2,14 +2,14 @@ const appTheme = {
     'dark': [
         '--appPrimaryBgColor:#161616',
         '--appPrimaryFontColor:#F5F5F5',
-        '--appLinkColorLight:#005da7',
+        '--appLinkColorLight:#0095FF',
         '--appImageOverlayColor:rgb(0, 0, 0, 0.9)',
         '--appShadowColor:#000'
     ],
     'light': [
         '--appPrimaryBgColor:#F5F5F5',
         '--appPrimaryFontColor:#161616',
-        '--appLinkColorLight:#005da7',
+        '--appLinkColorLight:#0095FF',
         '--appImageOverlayColor:rgb(255, 255, 255, 0.94)',
         '--appShadowColor:#DFE1E5'
     ]

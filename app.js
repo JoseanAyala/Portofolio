@@ -23,14 +23,14 @@ class App {
         ]
     }
 }
+const appHandler = new App;
+appHandler.setAppTheme();
 
 $(document).ready(function () {
     init();
 });
 
 function init() {
-    const appHandler = new App;
-    appHandler.setAppTheme();
 
     const setContentHeight = function () {
         if ($('.HIGHLIGHT').attr('id') === 'projects') {

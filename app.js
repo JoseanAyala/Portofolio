@@ -1,17 +1,10 @@
-setAppTheme = function (selectedTheme = this.appTheme.dark) {
-        selectedTheme.map((prop) => {
-            let property = prop.split(':')
-            document.documentElement.style.setProperty(property[0], property[1]);
-        });
-    }
-
 appTheme = {
     'dark': [
-            '--appPrimaryBgColor:#161616',
-            '--appPrimaryFontColor:#F5F5F5',
-            '--appLinkColorLight:#506355',
-            '--appImageOverlayColor:rgb(0, 0, 0, 0.9)',
-            '--appShadowColor:#000'
+        '--appPrimaryBgColor:#161616',
+        '--appPrimaryFontColor:#F5F5F5',
+        '--appLinkColorLight:#506355',
+        '--appImageOverlayColor:rgb(0, 0, 0, 0.9)',
+        '--appShadowColor:#000'
     ],
     'light': [
         '--appPrimaryBgColor:#F5F5F5',
@@ -19,17 +12,22 @@ appTheme = {
         '--appLinkColorLight:#87A890',
         '--appImageOverlayColor:rgb(255, 255, 255, 0.94)',
         '--appShadowColor:#DFE1E5'
-        ]
-    }
- 
-setAppTheme();
+    ]
+}
+
+const setAppTheme = function (selectedTheme = this.appTheme.dark) {
+    selectedTheme.map((prop) => {
+        let property = prop.split(':')
+        document.documentElement.style.setProperty(property[0], property[1]);
+    });
+}
 
 $(document).ready(function () {
     init();
 });
 
 function init() {
-
+    setAppTheme();
     const setContentHeight = function () {
         if ($('.HIGHLIGHT').attr('id') === 'projects') {
             $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content');

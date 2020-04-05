@@ -5,7 +5,7 @@ class App {
             document.documentElement.style.setProperty(property[0], property[1]);
         });
     }
-    
+
     appTheme = {
         'dark': [
             '--appPrimaryBgColor:#161616',
@@ -34,14 +34,14 @@ function init() {
 
     const setContentHeight = function () {
         if ($('.HIGHLIGHT').attr('id') === 'projects') {
-            $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content')
+            $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content');
 
             //Gets the contentBox greatest height and sets it to all divs.
             var height = 0;
-            var elements = document.querySelectorAll(".owl-carousel .containerContentBox")
+            var elements = document.querySelectorAll(".owl-carousel .containerContentBox");
             for (var index = 0; index < elements.length; index++) height = height < elements[index].offsetHeight ? elements[index].offsetHeight : height;
-            
-            $('.owl-carousel .containerContentBox').attr('style', 'height:' + height + 'px')
+
+            $('.owl-carousel .containerContentBox').attr('style', 'height:' + height + 'px');
         }
     }
 
@@ -50,67 +50,65 @@ function init() {
         window.resizedFinished = setTimeout(setContentHeight, 250);
     })
 
-    $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
-            center: true,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: false,
-                    autoplay: true,
-                    loop: true,
-                    autoplayTimeout: 4000,
-                    margin: 10
-                },
-                600: {
-                    items: 2,
-                    nav: false,
-                    autoplay: false,
-                    loop: false,
-                    margin: 200,
-
-                },
-                1000: {
-                    items: 2,
-                    nav: false,
-                    autoplay: false,
-                    loop: false,
-                    margin: 10,
-                }
+    $(".owl-carousel").owlCarousel({
+        center: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: false,
+                autoplay: true,
+                loop: true,
+                autoplayTimeout: 4000,
+                margin: 10
             },
-            autoplayHoverPause: true
-        });
+            600: {
+                items: 2,
+                nav: false,
+                autoplay: false,
+                loop: false,
+                margin: 200,
 
-        $('.bottomNav').on('click', 'div', function () {
-            var selectedElement = $(this);
-            var SelectedID = selectedElement.attr('id');
-
-            if ($('*').hasClass('fadeIn')) {
-                $('.fadeIn').removeClass('fadeIn animated');
+            },
+            1000: {
+                items: 2,
+                nav: false,
+                autoplay: false,
+                loop: false,
+                margin: 10,
             }
-            //Remove Previous HIGHLIGHT
-            $('.HIGHLIGHT').removeClass('HIGHLIGHT');
+        },
+        autoplayHoverPause: true
+    })
 
-            //Add HIGHLIGHT to current
-            selectedElement.addClass('HIGHLIGHT');
+    $('.bottomNav').on('click', 'div', function () {
+        var selectedElement = $(this);
+        var SelectedID = selectedElement.attr('id');
 
-            //Hide previous element
-            $('.DISPLAY').removeClass('DISPLAY').addClass('HDN');
+        if ($('*').hasClass('fadeIn')) {
+            $('.fadeIn').removeClass('fadeIn animated');
+        }
+        //Remove Previous HIGHLIGHT
+        $('.HIGHLIGHT').removeClass('HIGHLIGHT');
 
-            //Display new element
-            $('#' + SelectedID + 'Content').removeClass('HDN').addClass('DISPLAY');
+        //Add HIGHLIGHT to current
+        selectedElement.addClass('HIGHLIGHT');
 
-            if (SelectedID === 'projects')
-                setTimeout(setContentHeight, 300);
-        });
+        //Hide previous element
+        $('.DISPLAY').removeClass('DISPLAY').addClass('HDN');
 
-        $('.switch > input').click(function () {
-            if ($(this).is(':checked')) {
-                appHandler.setAppTheme(appHandler.appTheme.light);
-            } else {
-                appHandler.setAppTheme(appHandler.appTheme.dark);
-            }
-        });
-    });
+        //Display new element
+        $('#' + SelectedID + 'Content').removeClass('HDN').addClass('DISPLAY');
+
+        if (SelectedID === 'projects')
+            setTimeout(setContentHeight, 300);
+    })
+
+    $('.switch > input').click(function () {
+        if ($(this).is(':checked')) {
+            appHandler.setAppTheme(appHandler.appTheme.light);
+        } else {
+            appHandler.setAppTheme(appHandler.appTheme.dark);
+        }
+    })
 }

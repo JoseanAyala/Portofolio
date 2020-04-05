@@ -1,30 +1,28 @@
-class App {
-    setAppTheme = function (selectedTheme = this.appTheme.dark) {
+setAppTheme = function (selectedTheme = this.appTheme.dark) {
         selectedTheme.map((prop) => {
             let property = prop.split(':')
             document.documentElement.style.setProperty(property[0], property[1]);
         });
     }
 
-    appTheme = {
-        'dark': [
+appTheme = {
+    'dark': [
             '--appPrimaryBgColor:#161616',
             '--appPrimaryFontColor:#F5F5F5',
             '--appLinkColorLight:#506355',
             '--appImageOverlayColor:rgb(0, 0, 0, 0.9)',
             '--appShadowColor:#000'
-        ],
-        'light': [
-            '--appPrimaryBgColor:#F5F5F5',
-            '--appPrimaryFontColor:#161616',
-            '--appLinkColorLight:#87A890',
-            '--appImageOverlayColor:rgb(255, 255, 255, 0.94)',
-            '--appShadowColor:#DFE1E5'
+    ],
+    'light': [
+        '--appPrimaryBgColor:#F5F5F5',
+        '--appPrimaryFontColor:#161616',
+        '--appLinkColorLight:#87A890',
+        '--appImageOverlayColor:rgb(255, 255, 255, 0.94)',
+        '--appShadowColor:#DFE1E5'
         ]
     }
-}
-const appHandler = new App;
-appHandler.setAppTheme();
+ 
+setAppTheme();
 
 $(document).ready(function () {
     init();
@@ -106,9 +104,9 @@ function init() {
 
     $('.switch > input').click(function () {
         if ($(this).is(':checked')) {
-            appHandler.setAppTheme(appHandler.appTheme.light);
+            setAppTheme(appTheme.light);
         } else {
-            appHandler.setAppTheme(appHandler.appTheme.dark);
+            setAppTheme(appTheme.dark);
         }
     })
 }

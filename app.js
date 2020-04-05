@@ -1,7 +1,4 @@
 class App {
-    App(consoleMessage) {
-        console.log(consoleMessage);
-    }
     setAppTheme = function (selectedTheme = this.appTheme.dark) {
         selectedTheme.map((prop) => {
             let property = prop.split(':')
@@ -32,7 +29,7 @@ $(document).ready(function () {
 });
 
 function init() {
-    const appHandler = new App('Thank you for visiting!');
+    const appHandler = new App;
     appHandler.setAppTheme();
 
     const setContentHeight = function () {

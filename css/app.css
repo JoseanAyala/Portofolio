@@ -1,10 +1,5 @@
 /* Application */
 :root{
-  --appPrimaryBgColor: #161616;
-  --appPrimaryFontColor: #F5F5F5;
-  --appLinkColorLight: #005da7;
-  --appImageOverlayColor: rgb(0, 0, 0, 0.9); 
-  --appShadowColor: #000;
   --appBottomNav: 2cm;
 }
 

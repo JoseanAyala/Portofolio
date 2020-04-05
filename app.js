@@ -21,13 +21,14 @@ const setAppTheme = function (selectedTheme = this.appTheme.dark) {
         document.documentElement.style.setProperty(property[0], property[1]);
     });
 }
+setAppTheme();
 
 $(document).ready(function () {
     init();
 });
 
 function init() {
-    setAppTheme();
+
     const setContentHeight = function () {
         if ($('.HIGHLIGHT').attr('id') === 'projects') {
             $('.owl-carousel .containerContentBox').attr('style', 'height:fit-content');

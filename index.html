@@ -1,13 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josean Ayala</title>
+  <link rel="stylesheet" href="/src/index.css" />
+</head>
+<!-- https://alvarotrigo.com/fullPage/#page1 -->
+
+<body class="bg-cream">
+  <nav class="text-cream sticky top-0 flex h-14 w-full px-96  items-center justify-evenly bg-black">
+    <ul class="flex gap-4">
+      <li>
+        <a href="/" class="hover:bg-coolGrey text-cream rounded-xl p-2 text-xl hover:scale-110 hover:text-white">
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="/about" class="hover:bg-coolGrey text-cream rounded-xl p-2 text-xl hover:scale-110">
+          Blog
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <header class="mt-[-3.5rem] flex h-screen flex-col items-center justify-center">
+    <div class="flex gap-6 overflow-hidden rounded-xl bg-stone-800 shadow-sm shadow-black w-full">
+      <img src="https://avatars.githubusercontent.com/u/36864389?v=4" alt="Profile Photo"
+        class="h-64 w-64 object-cover" />
+      <div class="flex flex-col items-start justify-center">
+        <h1 class="mb-3 text-4xl font-bold text-black">Hi,</h1>
+        <h2 class="mb-3 text-4xl font-bold text-black">I'm Josean Ayala</h2>
+        <p class="text-md w-96 text-black">
+          I'm an experienced software engineer passionate about full stack
+          development who creates seamless solutions.
+        </p>
+        <div class="mt-4 flex gap-4">
+          <a href="https://github.com/joseanayala" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Logo"
+              class="h-6 w-6 hover:scale-110" />
+          </a>
+          <a href="https://www.linkedin.com/in/joseanayala" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+              alt="LinkedIn Logo" class="h-6 w-6 hover:scale-110" />
+          </a>
+          <a href="mailto:joseanluis2@gmail.com">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Email Logo"
+              class="h-6 w-6 hover:scale-110" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="px-96 w-full">
+    <div class="flex justify-between px-4">
+      <span class="font-bold text-xl">Software Engineer 3 @ Granicus</span>
+      <span class="font-bold text-xl">January 2020 - Present</span>
+    </div>
+    <ul>
+      <li>• Architected and built embeddable widgets using React, JavaScript and Webpack, empowering hundreds of
+        customers to seamlessly add product features into remote websites.</li>
+      <li>• Developed and maintained a highly available B2B SaaS product with a potential to impact millions of
+        users, while effectively collaborating with cross-functional teams</li>
+      <li>• Developed a new feature, empowering customers to effortlessly input their ArcGIS GeoJson data, resulting
+        in visualized points on an interactive map through Leaflet.js.</li>
+      <li>• Designed and implemented a seamless integration with Constant Contact, enabling efficient synchronization
+        of user data across both platforms, reducing customer data entry by 50%.</li>
+      <li>• Led a developer team while liaising with stakeholders on a year-long project, successfully creating a
+        citizen-facing web portal for Microsoft Dynamics 365 generating upsell opportunities for the sales team.</li>
+      <li>• Built a SMS notification system for user generated requests in civic engagement applications leveraging the
+        Twilio API</li>
+    </ul>
+
+  </section>
+  <section>
+    <div class="flex flex-col items-center justify-center">
+      <h1 class="mt-20 mb-10 text-4xl font-bold text-black">Projects</h1>
+      <div class="flex flex-col items-center justify-center">
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Logo"
+              class="h-16 w-16" />
+            <p class="text-black">React</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+              alt="TypeScript Logo" class="h-16 w-16" />
+            <p class="text-black">TypeScript</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js Logo"
+              class="h-16 w-16" />
+            <p class="text-black">Next.js</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js Logo"
+              class="h-16 w-16" />
+            <p class="text-black">Node.js</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+              alt="Express Logo" class="h-16 w-16" />
+            <p class="text-black">Express</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB Logo" class="h-16">
+  </section>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

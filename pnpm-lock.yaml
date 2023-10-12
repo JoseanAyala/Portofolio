@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  fullpage.js:
-    specifier: ^4.0.20
-    version: 4.0.20
-
 devDependencies:
   '@types/fullpage.js':
     specifier: ^2.9.4
@@ -498,10 +493,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /fullpage.js@4.0.20:
-    resolution: {integrity: sha512-y72V3oV/pFccPYaxnUosEltQP9tXH340x479oQSS9Yab0L0YpIPNE0PFA68l6XEq5Lhw7IRqyCgVwL+WdjtQdA==}
-    dev: false
 
   /glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}

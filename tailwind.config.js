@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -12,7 +13,11 @@ export default {
       white: "#F9F9F9",
       black: "#000000",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        neon: "0 0 10px theme('colors.highlight')",
+      },
+    },
   },
   plugins: [],
 };

@@ -4,10 +4,6 @@
 
 @layer base {
   .font-highlight {
-    text-shadow:
-      -1px -1px 0 theme("colors.darkBlue"),
-      1px -1px 0 theme("colors.darkBlue"),
-      -1px 1px 0 theme("colors.darkBlue"),
-      1px 1px 0 theme("colors.darkBlue");
+    text-shadow: theme("colors.highlight") 1px 1px;
   }
 }

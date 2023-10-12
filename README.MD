@@ -4,7 +4,7 @@ This is a simple portfolio website completly from scratch.
 
 ## Demo
 
-You can view the live demo of my portfolio website [here](https://joseanportfolio.vercel.app/).
+You can view the live demo of my portfolio website [here](https://joseanayala.vercel.app/).
 
 ## Technologies Used
 

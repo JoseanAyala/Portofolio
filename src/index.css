@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .font-highlight {
+    text-shadow:
+      -1px -1px 0 theme("colors.darkBlue"),
+      1px -1px 0 theme("colors.darkBlue"),
+      -1px 1px 0 theme("colors.darkBlue"),
+      1px 1px 0 theme("colors.darkBlue");
+  }
+}

@@ -25,7 +25,7 @@ func handleRequests() {
 	log.Fatal(http.ListenAndServe(":1337", router))
 }
 
-func main() {
+func Main() {
 	fmt.Println("Rest API")
 	handleRequests()
 }

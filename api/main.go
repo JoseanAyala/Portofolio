@@ -14,7 +14,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
 }
 
-func Handler() {
+func handleRequests() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homePage).Methods("GET")
 	router.HandleFunc("/articles", articleUtil.GetArticles).Methods("GET")
@@ -27,5 +27,5 @@ func Handler() {
 
 func main() {
 	fmt.Println("Rest API")
-	Handler()
+	handleRequests()
 }

@@ -1,7 +1,7 @@
 package articleUtil
 
 import (
-	"api/dataAccess"
+	"api/_pkg/dataAccess"
 	"encoding/json"
 	"fmt"
 	"net/http"

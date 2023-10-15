@@ -2,7 +2,6 @@ package handler
 
 import (
 	"api/_pkg/articleUtil"
-	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -20,6 +19,5 @@ func Handler() {
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint Hit: homePage")
-	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
+	articleUtil.GetArticles(w, r)
 }

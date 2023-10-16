@@ -17,6 +17,18 @@ export default {
       boxShadow: {
         neon: "0 0 10px theme('colors.highlight')",
       },
+
+      animation: {
+        fadeIn: "fadeIn .35s ease-in",
+      },
+
+      // that is actual animation
+      keyframes: () => ({
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 100 },
+        },
+      }),
     },
   },
   plugins: [],

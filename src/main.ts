@@ -70,6 +70,19 @@ function renderExperience(items: Experience[]): void {
   });
 }
 
+function fadeIn(elem: HTMLElement, mls: number): void {
+  if (!elem) return;
+  setTimeout(() => {
+    elem.classList.add("animate-fadeIn");
+    elem.classList.remove("opacity-0");
+  }, mls);
+}
+
 window.onload = () => {
   renderExperience(experience);
+
+  const [header] = document.getElementsByTagName("header");
+  const [main] = document.getElementsByTagName("main");
+  fadeIn(header, 700);
+  fadeIn(main, 1400);
 };

@@ -10,6 +10,6 @@ You can view the live demo of my portfolio website [here](https://joseanayala.ve
 
 ## Technologies Used
 
-- HTML
-- Tailwind CSS
+- React
 - TypeScript
+- Tailwind CSS

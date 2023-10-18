@@ -42,7 +42,7 @@ export default function Hero() {
             href={contact.href}
             target="_blank"
             aria-label={contact.ariaLabel}
-            className="animate-fadeRight pointer-events-auto"
+            className="pointer-events-auto animate-fadeRight"
             key={i}
           >
             <i

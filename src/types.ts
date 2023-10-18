@@ -1,14 +1,10 @@
-export type Experience = {
+export type Content = {
   title: string;
-  company: string;
+  subTitle: string;
   href: string;
   date: string;
   description: string;
   tags: string[];
 };
 
-export type Contact = {
-  ariaLabel: string;
-  faIcon: string;
-  url: string;
-};
+export type ContentList = Content[];

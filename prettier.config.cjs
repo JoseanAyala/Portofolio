@@ -1,5 +1,6 @@
-// prettier.config.js
-module.exports = {
-  plugins: ["prettier-plugin-tailwindcss"],
-  tailwindConfig: './tailwind.config.js',
-};
+if (typeof module !== "undefined") {
+  module.exports = {
+    plugins: ["prettier-plugin-tailwindcss"],
+    tailwindConfig: "./tailwind.config.js",
+  };
+}

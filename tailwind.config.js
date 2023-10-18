@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
+import "tailwindcss/plugin";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -19,16 +20,32 @@ export default {
       },
 
       animation: {
-        fadeIn: "fadeIn .35s ease-in",
+        fadeUp: "fadeUp .75s ease-in",
+        fadeDown: "fadeDown .75s ease-in",
+        fadeRight: "fadeRight .75s ease-in",
+        fadeLeft: "fadeLeft .75s ease-in",
       },
-
-      // that is actual animation
-      keyframes: () => ({
-        fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 100 },
-        },
-      }),
+      keyframes: () => {
+        const movementPixels = 75;
+        return {
+          fadeUp: {
+            "0%": { opacity: 0, transform: `translateY(-${movementPixels}px)` },
+            "100%": { opacity: 100, transform: `translateY(0)` },
+          },
+          fadeDown: {
+            "0%": { opacity: 0, transform: `translateY(${movementPixels}px)` },
+            "100%": { opacity: 100, transform: `translateY(0)` },
+          },
+          fadeRight: {
+            "0%": { opacity: 0, transform: `translateX(-${movementPixels}px)` },
+            "100%": { opacity: 100, transform: `translateX(0)` },
+          },
+          fadeLeft: {
+            "0%": { opacity: 0, transform: `translateX(${movementPixels}px)` },
+            "100%": { opacity: 100, transform: `translateX(0)` },
+          },
+        };
+      },
     },
   },
   plugins: [],

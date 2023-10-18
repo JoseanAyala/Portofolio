@@ -1,6 +1,8 @@
 # My Developer Portfolio
 
-This is a simple portfolio website completly from scratch.
+This is a simple portfolio to show of my experience and projects.
+
+Curently a work in progress!
 
 ## Demo
 

@@ -1,29 +1,36 @@
-import { createReactEditorJS } from "react-editor-js";
+import EditorJS from "@editorjs/editorjs";
+import Header from "@editorjs/header";
+import { useEffect, useRef } from "react";
 
 export default function ArticleEdit() {
-  const ReactEditorJS = createReactEditorJS();
+  const editorRef = useRef<EditorJS | null>(null);
 
+  editorRef.current?.save().then((outputData) => {
+    console.log("ArticleEdit outputData", outputData);
+  });
+
+  console.log("editorRef", editorRef.current);
+  useEffect(() => {
+    console.log(editorRef.current?.blocks);
+  }, [editorRef.current?.blocks]);
+
+  useEffect(() => {
+    editorRef.current = new EditorJS({
+      holder: "editor",
+      autofocus: true,
+      tools: {
+        header: Header,
+      },
+    });
+
+    return () => {
+      editorRef.current?.destroy();
+    };
+  });
   return (
-    <ReactEditorJS
-      defaultValue={{
-        time: 1635603431943,
-        blocks: [
-          {
-            id: "sheNwCUP5A",
-            type: "header",
-            data: {
-              text: "Editor.js",
-              level: 2,
-            },
-          },
-        ],
-      }}
-      holder="custom"
-    >
-      <div
-        id="custom"
-        className="pointer-events-auto min-h-screen max-w-screen-xl bg-white text-black"
-      />
-    </ReactEditorJS>
+    <div
+      id="editor"
+      className="max-w-screen bg-gray-100 pointer-events-auto min-h-screen text-darkestBlue"
+    ></div>
   );
 }

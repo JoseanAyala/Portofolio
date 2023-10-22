@@ -5,7 +5,7 @@ import useClient from "src/services/client";
 
 const AuthActions = () => {
   const userContext = useContext(UserContext);
-  const { get, baseUrl } = useClient(false);
+  const { get, baseUrl } = useClient();
   const {
     user,
     isAuthenticated,

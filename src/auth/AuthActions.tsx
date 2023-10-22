@@ -1,11 +1,10 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect } from "react";
 import { UserContext } from "src/store/userContext";
-import useClient from "src/services/client";
 
 const AuthActions = () => {
   const userContext = useContext(UserContext);
-  const { get, baseUrl } = useClient();
+
   const {
     user,
     isAuthenticated,
@@ -28,17 +27,6 @@ const AuthActions = () => {
     });
   }, [isAuthenticated]);
 
-  useEffect(() => {
-    if (isLoading) return;
-
-    const getfromAPI = async () => {
-      const [res, err] = await get(`${baseUrl}/private`);
-      console.log(res, err);
-    };
-
-    getfromAPI();
-  }, [userContext?.user]);
-
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -55,7 +43,7 @@ const AuthActions = () => {
           className="h-12 w-12 rounded-full border-2 border-solid border-lightBlue object-cover"
         />
       </button>
-      <ul className="absolute hidden pt-1 group-hover:block">
+      <ul className="absolute right-0 hidden pt-1 group-hover:block">
         <li>
           <button
             type="button"

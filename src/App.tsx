@@ -1,17 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserContextProvider } from "./store/userContext";
 import Homepage from "src/pages/homepage/Homepage";
-import ArticleEdit from "./pages/articles/ArticlesEdit";
-import AuthActions from "./auth/AuthActions";
+import Articles from "./pages/articles/Articles";
+import Navbar from "./auth/Navbar";
 
 export default function App() {
   return (
     <UserContextProvider>
       <BrowserRouter>
-        <AuthActions />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/article" element={<ArticleEdit />} />
+          <Route path="/articles" element={<Articles />} />
         </Routes>
       </BrowserRouter>
     </UserContextProvider>

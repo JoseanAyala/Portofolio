@@ -4,13 +4,22 @@ import { UserContext } from "src/store/userContext";
 
 type clientReponse = [any | undefined, any | undefined];
 
-export default (isProd = true) => {
+const checkLocalHostIsOnline = async () => {
+  try {
+    const response = await fetch("http://localhost:8080");
+    return response.status === 200;
+  } catch (error) {
+    return false;
+  }
+};
+
+const baseUrl = (await checkLocalHostIsOnline())
+  ? "http://localhost:8080"
+  : "https://gojayala.onrender.com";
+
+export default () => {
   const userContext = useContext(UserContext);
   const headers = { Authorization: `Bearer ${userContext?.user?.token || ""}` };
-
-  const baseUrl = isProd
-    ? "https://gojayala.onrender.com"
-    : "http://localhost:8080";
 
   const get = async (url: string): Promise<clientReponse> => {
     try {

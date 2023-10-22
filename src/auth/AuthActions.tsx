@@ -27,22 +27,14 @@ const AuthActions = () => {
     });
   }, [isAuthenticated]);
 
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
+  if (isLoading) return null;
 
   if (!isAuthenticated)
     return <button onClick={() => loginWithRedirect()}>Log In</button>;
 
   return (
-    <div className="group relative inline-block">
-      <button>
-        <img
-          src={user!.picture}
-          alt={user!.name}
-          className="h-12 w-12 rounded-full border-2 border-solid border-lightBlue object-cover"
-        />
-      </button>
+    <div className="group sticky inline-block">
+      <div className="select-none">{user!.email}</div>
       <ul className="absolute right-0 hidden pt-1 group-hover:block">
         <li>
           <button
@@ -51,7 +43,7 @@ const AuthActions = () => {
             onClick={() => {
               logout();
             }}
-            className="whitespace-no-wrap block rounded-xl bg-white bg-opacity-10 p-2 hover:cursor-pointer hover:shadow-neon"
+            className="whitespace-no-wrap w-full rounded-xl bg-white bg-opacity-10 p-2 hover:cursor-pointer hover:shadow-neon"
           >
             Logout
           </button>

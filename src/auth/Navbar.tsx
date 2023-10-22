@@ -10,14 +10,17 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-6 py-8 md:px-12 lg:px-24">
+    <nav
+      className="mx-auto flex
+    max-w-screen-xl flex-wrap items-end justify-between px-6 pb-2 pt-4 md:px-12 lg:px-24"
+    >
       <div className="flex flex-shrink-0 items-center text-white">
-        <Link
-          to="/"
-          className="font-highlight rounded-xl px-3 py-1 text-3xl font-bold tracking-tight text-lightBlue  hover:cursor-pointer
-          hover:bg-white hover:bg-opacity-10"
-        >
-          Portfolio
+        <Link to="/" className="hover:cursor-pointer">
+          <img
+            src="/assets/logo.jpeg"
+            alt="website logo"
+            className="h-12 w-12 rounded-full"
+          />
         </Link>
       </div>
       <AuthActions />

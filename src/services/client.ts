@@ -4,16 +4,7 @@ import { UserContext } from "src/store/userContext";
 
 type clientReponse = [any | undefined, any | undefined];
 
-const checkLocalHostIsOnline = async () => {
-  try {
-    const response = await fetch("http://localhost:8080");
-    return response.status === 200;
-  } catch (error) {
-    return false;
-  }
-};
-
-const baseUrl = (await checkLocalHostIsOnline())
+const baseUrl = false
   ? "http://localhost:8080"
   : "https://gojayala.onrender.com";
 

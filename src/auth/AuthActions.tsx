@@ -30,25 +30,20 @@ const AuthActions = () => {
   if (isLoading) return null;
 
   if (!isAuthenticated)
-    return <button onClick={() => loginWithRedirect()}>Log In</button>;
+    return <button onClick={() => loginWithRedirect()}>Sign In</button>;
 
   return (
     <div className="group sticky inline-block">
-      <div className="select-none">{user!.email}</div>
-      <ul className="absolute right-0 hidden pt-1 group-hover:block">
-        <li>
-          <button
-            type="button"
-            aria-label="Logout"
-            onClick={() => {
-              logout();
-            }}
-            className="whitespace-no-wrap w-full rounded-xl bg-white bg-opacity-10 p-2 hover:cursor-pointer hover:shadow-neon"
-          >
-            Logout
-          </button>
-        </li>
-      </ul>
+      <button
+        type="button"
+        aria-label="Logout"
+        onClick={() => {
+          logout();
+        }}
+        className="whitespace-no-wrap rounded-lg p-2 hover:cursor-pointer hover:bg-white hover:bg-opacity-10 "
+      >
+        Sign out
+      </button>
     </div>
   );
 };

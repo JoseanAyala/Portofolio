@@ -11,10 +11,11 @@ export type ContentList = Content[];
 
 export type User = { name: string; email: string; img: string; token: string };
 
-export type Articles = {
+export type Article = {
   id: string;
   title: string;
   body: string;
+  description: string;
   dateCreated: string;
   dateUpdated: string;
 };

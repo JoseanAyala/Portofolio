@@ -18,6 +18,7 @@ const AllArticles = ({ articleList }: AllArticlesProps) => {
   const endIndex = startIndex + pageSize;
   const currentArticles = articleList.slice(startIndex, endIndex);
 
+  // TODO: ADD EDIT BUTTON NEXT TO TITLE
   return (
     <div>
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">

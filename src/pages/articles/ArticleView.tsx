@@ -13,12 +13,20 @@ const ArticleView = () => {
   const renderBlock = (block: OutputBlockData) => {
     switch (block.type) {
       case "header":
-        return <h2 className="mb-2 text-2xl font-bold">{block.data.text}</h2>;
+        return (
+          <h2 key={block.id} className="mb-2 text-2xl font-bold">
+            {block.data.text}
+          </h2>
+        );
       case "paragraph":
-        return <p className="mb-1">{block.data.text}</p>;
+        return (
+          <p key={block.id} className="mb-1">
+            {block.data.text}
+          </p>
+        );
       case "list":
         return (
-          <ul className="mb-2 list-inside list-disc">
+          <ul key={block.id} className="mb-2 list-inside list-disc">
             {block.data.items.map((item: string, index: number) => (
               <li key={index}>{item}</li>
             ))}
@@ -26,18 +34,24 @@ const ArticleView = () => {
         );
       case "code":
         return (
-          <pre className="mb-4 rounded-md bg-gray-900 p-4 text-white">
+          <pre
+            key={block.id}
+            className="mb-4 rounded-md bg-gray-900 p-4 text-white"
+          >
             <code>{block.data.code}</code>
           </pre>
         );
       case "quote":
         return (
-          <blockquote className="mb-4 border-l-4 border-gray-500 pl-4">
+          <blockquote
+            key={block.id}
+            className="mb-4 border-l-4 border-gray-500 pl-4"
+          >
             {block.data.text}
           </blockquote>
         );
       case "delimiter":
-        return <hr className="my-8" />;
+        return <hr key={block.id} className="my-8" />;
       default:
         return null;
     }

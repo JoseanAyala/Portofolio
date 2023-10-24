@@ -4,11 +4,10 @@ import { UserContext } from "src/store/userContext";
 
 type clientReponse = [any | undefined, any | undefined];
 
-const baseUrl = false
-  ? "http://localhost:8080"
-  : "https://gojayala.onrender.com";
-
 export default () => {
+  const baseUrl = true
+    ? "http://localhost:8080"
+    : "https://gojayala.onrender.com";
   const userContext = useContext(UserContext);
   const headers = { Authorization: `Bearer ${userContext?.user?.token || ""}` };
 

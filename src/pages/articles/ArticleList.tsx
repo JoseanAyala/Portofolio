@@ -20,7 +20,7 @@ const AllArticles = ({ articleList }: AllArticlesProps) => {
 
   return (
     <div>
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {currentArticles.map((article) => (
           <li key={article.id}>
             <div className="max-w-full rounded-lg border border-gray-700">
@@ -35,7 +35,8 @@ const AllArticles = ({ articleList }: AllArticlesProps) => {
                 </p>
                 <Link
                   to={`/articles/${article.id}`}
-                  className="inline-flex items-center rounded-lg bg-highlight px-3 py-2 text-center text-sm font-medium text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white"
+                  className="inline-flex items-center rounded-lg bg-highlight px-3 py-2 text-center text-sm font-medium
+                   text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white"
                 >
                   Read more
                   <svg

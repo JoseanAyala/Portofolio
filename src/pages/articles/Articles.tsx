@@ -26,7 +26,7 @@ const Articles = () => {
         </h1>
         <div className="mb-4">
           <Link
-            to="/create/article"
+            to="/articles/create"
             className=" rounded-md p-1 text-white transition-all hover:bg-white hover:text-black"
           >
             <i className="fas fa-plus fa-lg"></i>

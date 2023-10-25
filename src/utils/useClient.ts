@@ -1,13 +1,16 @@
 import axios from "axios";
 import { useContext } from "react";
-import { UserContext } from "src/store/userContext";
+import { UserContext } from "src/utils/userContext";
 
 type clientReponse = [any | undefined, any | undefined];
 
-export default () => {
-  const baseUrl = true
-    ? "http://localhost:8080"
-    : "https://gojayala.onrender.com";
+export default function useClient() {
+  const url = {
+    local: "http://localhost:8080",
+    production: "https://gojayala.onrender.com",
+  };
+
+  const baseUrl = url.production;
   const userContext = useContext(UserContext);
   const headers = { Authorization: `Bearer ${userContext?.user?.token || ""}` };
 
@@ -48,4 +51,4 @@ export default () => {
   };
 
   return { get, post, put, del, baseUrl };
-};
+}

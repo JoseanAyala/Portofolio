@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Article } from "src/types";
-import Pagination from "./Pagination";
+import Pagination from "src/components/Pagination";
 import { useState } from "react";
 
-type AllArticlesProps = {
+type props = {
   articleList: Article[];
 };
 
-const AllArticles = ({ articleList }: AllArticlesProps) => {
+export default function AllArticles({ articleList }: props) {
   const [currentPage, setCurrentPage] = useState(1);
   const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
@@ -69,6 +69,4 @@ const AllArticles = ({ articleList }: AllArticlesProps) => {
       />
     </div>
   );
-};
-
-export default AllArticles;
+}

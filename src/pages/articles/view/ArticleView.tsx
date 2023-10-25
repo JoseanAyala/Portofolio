@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Article as TArticle } from "src/types";
-import useClient from "src/services/client";
+import useClient from "src/utils/useClient";
 import { OutputBlockData, OutputData } from "@editorjs/editorjs";
 
-const ArticleView = () => {
+export default function ArticleView() {
   const { get, baseUrl } = useClient();
   const { id } = useParams<{ id: string }>();
   const [article, setArticle] = useState<TArticle | undefined>();
@@ -86,6 +86,4 @@ const ArticleView = () => {
       )}
     </div>
   );
-};
-
-export default ArticleView;
+}

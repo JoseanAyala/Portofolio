@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect } from "react";
-import { UserContext } from "src/store/userContext";
+import { UserContext } from "src/utils/userContext";
 
 const AuthActions = () => {
   const userContext = useContext(UserContext);

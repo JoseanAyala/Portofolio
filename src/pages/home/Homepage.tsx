@@ -1,5 +1,5 @@
-import Hero from "./components/Hero";
-import Content from "./components/Content";
+import Hero from "./Hero";
+import Content from "./Content";
 
 export default function Homepage() {
   return (

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import useClient from "src/services/client";
+import useClient from "src/utils/useClient";
 import { Article } from "src/types";
-import ArticleList from "./ArticleList";
+import ArticleGrid from "./ArticleGrid";
 import { Link } from "react-router-dom";
 
-const Articles = () => {
+export default function Articles() {
   const [articles, setArticles] = useState<Article[] | undefined>(undefined);
   const { get, baseUrl } = useClient();
 
@@ -34,10 +34,8 @@ const Articles = () => {
         </div>
       </div>
       {articles && articles.length > 0 && (
-        <ArticleList articleList={articles} />
+        <ArticleGrid articleList={articles} />
       )}
     </div>
   );
-};
-
-export default Articles;
+}

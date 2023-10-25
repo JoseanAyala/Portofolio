@@ -1,23 +1,19 @@
 import EditorJS, { OutputData } from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import { useEffect, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import useClient from "src/services/client";
+import { useParams } from "react-router-dom";
+import useClient from "src/utils/useClient";
 import { useState } from "react";
+import ActionButtons from "./ActionButtons";
 
 export default function ArticleEditor() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
   const editorRef = useRef<EditorJS | undefined>(undefined);
-  const nav = useNavigate();
-
   const { id } = useParams<{ id: string }>();
-  const { get, post, put, del, baseUrl } = useClient();
+  const { get, baseUrl } = useClient();
 
-  const gatherPayload = async () => {
-    console.log(editorRef.current);
-    debugger;
+  const buildPayload = async () => {
     await editorRef.current?.isReady;
     const outputData = await editorRef.current?.save();
     if (!outputData) return undefined;
@@ -29,33 +25,6 @@ export default function ArticleEditor() {
     };
 
     return payload;
-  };
-
-  const handleEdit = async () => {
-    const payload = await gatherPayload();
-    if (!payload) return;
-
-    const [_, err] = await put(`${baseUrl}/articles/edit/${id}`, payload);
-    if (err) return;
-
-    // TODO: Success banner.
-  };
-  const handleDelete = async () => {
-    const [_, err] = await del(`${baseUrl}/articles/delete/${id}`);
-    if (err) return;
-
-    // TODO: Success banner.
-    nav(`/articles`);
-  };
-
-  const handlePublish = async () => {
-    const payload = await gatherPayload();
-    if (!payload) return;
-
-    const [res, err] = await post(`${baseUrl}/articles/create`, payload);
-    if (err) return;
-
-    nav(`/articles/${res.id}`);
   };
 
   useEffect(() => {
@@ -112,7 +81,7 @@ export default function ArticleEditor() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           id="large-input"
-          className="block w-full rounded-lg border border-gray-300 bg-white p-4 px-10 text-lg text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
+          className="block w-full rounded-lg border border-gray-300 bg-darkestBlue p-4 px-10 text-lg text-white  focus:border-blue-500 focus:ring-blue-500 "
         />
       </div>
       <div className="mb-6">
@@ -127,7 +96,7 @@ export default function ArticleEditor() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
-          className="text-md block w-full rounded-lg border border-gray-300 bg-white px-10 py-4  text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+          className="text-md block w-full rounded-lg border border-gray-300 bg-darkestBlue px-10 py-4  text-white focus:border-blue-500 focus:ring-blue-500"
           placeholder="Write a description here..."
         ></textarea>
       </div>
@@ -140,44 +109,11 @@ export default function ArticleEditor() {
         </label>
         <div
           id="editor"
-          className=" pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg bg-gray-100 py-4 text-black "
+          className=" pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg bg-darkestBlue py-4 text-white"
         />
       </div>
 
-      <div className="flex justify-end">
-        {id ? (
-          <>
-            <button
-              onClick={handleDelete}
-              type="button"
-              className="hover: mr-2 inline-flex items-center rounded-lg bg-black px-3 py-2 text-center
-           text-sm font-medium text-red-500  transition-all ease-in-out hover:bg-red-700
-           hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
-            >
-              Delete
-            </button>
-            <button
-              onClick={handleEdit}
-              type="button"
-              className="inline-flex items-center rounded-lg bg-grey  px-3 py-2 text-center text-sm font-medium
-           text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2
-           focus:ring-white"
-            >
-              Edit
-            </button>
-          </>
-        ) : (
-          <button
-            onClick={handlePublish}
-            type="button"
-            className="inline-flex items-center rounded-lg bg-highlight px-3 py-2 text-center text-sm font-medium
-           text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2
-           focus:ring-white"
-          >
-            Publish
-          </button>
-        )}
-      </div>
+      <ActionButtons buildPayload={buildPayload} />
     </div>
   );
 }

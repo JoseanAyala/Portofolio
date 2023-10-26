@@ -27,9 +27,9 @@ const Pagination = ({
             <button
               className={`${
                 currentPage === page
-                  ? "bg-gray-900 text-white"
-                  : "text-gray-700"
-              } rounded-md px-3 py-1 font-medium text-white transition-all hover:bg-white hover:text-black`}
+                  ? "bg-neutral-900 text-white"
+                  : "text-opacity-50"
+              } rounded-md px-3 py-1 font-medium text-white transition-all hover:bg-neutral-800`}
               onClick={() => onPageChange(page)}
             >
               {page}

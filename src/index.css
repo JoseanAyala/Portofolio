@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  .font-highlight {
-    text-shadow: theme("colors.highlight") 1px 1px;
-  }
-}
-
 h1.ce-header {
   @apply text-3xl font-bold;
 }
@@ -70,8 +64,8 @@ h6.ce-header {
   color: black;
 }
 .codex-editor ::selection {
-  background-color: theme("colors.highlight") !important;
+  background-color: theme("colors.primary.500") !important;
 }
 .ce-block--selected .ce-block__content {
-  background-color: theme("colors.highlight") !important;
+  background-color: theme("colors.primary.500") !important;
 }

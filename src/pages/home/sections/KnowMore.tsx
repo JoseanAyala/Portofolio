@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 export default function KnowMore() {
   return (
     <section className="mb-12" aria-label="Know more">
-      <h3 className="font-highlight mb-4 text-4xl font-bold text-lightBlue">
+      <h3 className="text-secondary-100 mb-4 text-4xl font-bold tracking-tight">
         Want to know more?
       </h3>
       <Link
         to={"/articles"}
-        className="pointer-events-auto flex w-full items-center rounded-full font-bold text-lightBlue underline hover:no-underline"
+        className="pointer-events-auto flex w-full items-center rounded-full font-bold text-white underline hover:no-underline"
       >
         <span>Check out my articles</span>
         <svg

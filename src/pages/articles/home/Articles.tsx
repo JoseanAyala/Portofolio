@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import useClient from "src/utils/useClient";
 import { Article } from "src/types";
 import ArticleGrid from "./ArticleGrid";
-import { Link } from "react-router-dom";
-import Socials from "src/pages/home/socials";
+import Socials from "src/components/Socials";
+import ProfileCard from "src/components/ProfileCard";
 
 export default function Articles() {
   const [articles, setArticles] = useState<Article[] | undefined>(undefined);
@@ -20,28 +20,20 @@ export default function Articles() {
   }, []);
 
   return (
-    <div className="p-6 md:px-12 md:py-8 lg:px-24 ">
-      <div className="flex items-end justify-between">
-        <h1 className="font-highlight font-white mb-4 text-5xl font-bold tracking-tight">
-          Articles
-        </h1>
-        <div className="mb-4">
-          <Link
-            to="/articles/create"
-            className=" rounded-md p-1 text-white transition-all hover:bg-white hover:text-black"
-          >
-            <i className="fas fa-plus fa-lg"></i>
-          </Link>
-        </div>
+    <div className="grid grid-cols-3 gap-6 p-6 md:px-12 md:py-8 lg:px-24">
+      <div>
+        <ProfileCard></ProfileCard>
       </div>
-      {articles && articles.length > 0 && (
-        <ArticleGrid articleList={articles} />
-      )}
-      <div
-        className="fixed bottom-0 right-6 flex items-center justify-center rounded-t-xl border border-b-0 border-grey
-        bg-zinc-900 px-3 pb-3 pt-2 transition-all ease-in-out hover:bg-zinc-800"
-      >
-        <Socials />
+      <div className="col-span-2">
+        {articles && articles.length > 0 && (
+          <ArticleGrid articleList={articles} />
+        )}
+        {/* <div
+          className="fixed bottom-0 left-0 right-0 flex items-center justify-around gap-4 bg-neutral-800
+        p-4 transition-all ease-in-out md:left-auto md:right-4 md:rounded-t-xl"
+        >
+          <Socials />
+        </div> */}
       </div>
     </div>
   );

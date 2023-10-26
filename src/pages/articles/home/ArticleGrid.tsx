@@ -21,23 +21,23 @@ export default function AllArticles({ articleList }: props) {
   // TODO: ADD EDIT BUTTON NEXT TO TITLE
   return (
     <div>
-      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-1">
         {currentArticles.map((article) => (
           <li key={article.id}>
-            <div className="max-w-full rounded-lg border border-gray-700">
+            <div className="max-w-full rounded-lg bg-neutral-900 p-4 shadow">
               <div className="p-5">
                 <Link to={`/articles/${article.id}`}>
                   <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
                     {article.title}
                   </h2>
                 </Link>
-                <p className="mb-3 font-normal text-white">
+                <p className="mb-3 font-normal text-white text-opacity-70">
                   {article.description}
                 </p>
                 <Link
                   to={`/articles/${article.id}`}
-                  className="inline-flex items-center rounded-lg bg-highlight px-3 py-2 text-center text-sm font-medium
-                   text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white"
+                  className="bg-secondary-700 hover:bg-secondary-900 inline-flex items-center rounded-lg px-3 py-2
+                   font-medium text-white transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-white"
                 >
                   Read more
                   <svg

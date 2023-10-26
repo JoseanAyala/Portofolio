@@ -30,7 +30,14 @@ const AuthActions = () => {
   if (isLoading) return null;
 
   if (!isAuthenticated)
-    return <button onClick={() => loginWithRedirect()}>Sign In</button>;
+    return (
+      <button
+        onClick={() => loginWithRedirect()}
+        className="whitespace-no-wrap text-secondary-100 rounded-lg p-2 hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
+      >
+        Sign In
+      </button>
+    );
 
   return (
     <div className="group sticky inline-block">
@@ -40,7 +47,7 @@ const AuthActions = () => {
         onClick={() => {
           logout();
         }}
-        className="whitespace-no-wrap rounded-lg p-2 hover:cursor-pointer hover:bg-white hover:bg-opacity-10 "
+        className="whitespace-no-wrap text-secondary-100 rounded-lg p-2 hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
       >
         Sign out
       </button>

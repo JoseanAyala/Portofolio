@@ -38,25 +38,25 @@ export default function Experiences() {
           className="pointer-events-auto "
         >
           <div
-            className="grid grid-cols-4 rounded-xl p-4 transition-all ease-in-out hover:cursor-pointer
-        hover:bg-white hover:bg-opacity-10 hover:shadow-neon"
+            className="grid grid-cols-4 rounded-xl bg-neutral-900 p-4 shadow
+        transition-all ease-in-out hover:cursor-pointer hover:bg-neutral-800 hover:shadow-neon"
           >
-            <div className="text-md italic text-lightBlue">{exp.date}</div>
+            <div className="text-md italic text-white">{exp.date}</div>
             <div className="col-span-3 flex flex-col items-start justify-start px-4">
               <div>
-                <div className="text-xl font-bold text-lightBlue">
-                  {exp.title}
-                </div>
-                <div className="mb-1 font-semibold text-lightBlue">
+                <div className="text-xl font-bold text-white">{exp.title}</div>
+                <div className="mb-1 font-semibold text-white text-opacity-70">
                   {exp.subTitle}
                 </div>
               </div>
               <div>
-                <span className="italic">{exp.description} </span>
+                <span className="font-light text-opacity-70">
+                  {exp.description}{" "}
+                </span>
                 <div className="pt-2">
                   {exp.tags.map((tag, tagI) => (
                     <div
-                      className="mb-2 mr-1 inline-block rounded-full border-2 border-solid border-highlight px-3 py-2"
+                      className="border-primary-500 mb-2 mr-1 inline-block rounded-full border-2 border-solid px-3 py-2"
                       key={tagI}
                     >
                       {tag}
@@ -73,7 +73,7 @@ export default function Experiences() {
 
   return (
     <section aria-label="Experience">
-      <h3 className="font-highlight text-4xl font-bold text-lightBlue">
+      <h3 className="text-secondary-100 text-4xl font-bold tracking-tight">
         Experience
       </h3>
       <ul>{renderExperiences()}</ul>

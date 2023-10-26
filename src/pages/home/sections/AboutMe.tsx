@@ -1,7 +1,7 @@
 export default function AboutMe() {
   return (
     <section className="mb-12" aria-label="About Me">
-      <h3 className="font-highlight mb-4 text-4xl font-bold text-lightBlue">
+      <h3 className="text-secondary-100 mb-4 text-4xl font-bold tracking-tight">
         About Me
       </h3>
       <p className="mb-4">
@@ -13,7 +13,7 @@ export default function AboutMe() {
       <p className="mb-4">
         Currently I'm a software engineer at{" "}
         <a
-          className="pointer-events-auto text-lightBlue underline hover:no-underline"
+          className="pointer-events-auto underline hover:no-underline"
           href="https://granicus.com/"
           target="_blank"
           rel="noopener noreferrer"

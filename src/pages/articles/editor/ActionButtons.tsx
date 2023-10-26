@@ -65,7 +65,7 @@ export default function ActionButtons({ buildPayload }: props) {
         <button
           onClick={handlePublish}
           type="button"
-          className="inline-flex items-center rounded-lg bg-highlight px-3 py-2 text-center text-sm font-medium
+          className="bg- inline-flex items-center rounded-lg px-3 py-2 text-center text-sm font-medium
      text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2
      focus:ring-white"
         >

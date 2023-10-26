@@ -109,7 +109,7 @@ export default function ArticleEditor() {
         </label>
         <div
           id="editor"
-          className=" pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg bg-darkestBlue py-4 text-white"
+          className=" pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg border bg-darkestBlue py-4 text-white "
         />
       </div>
 

@@ -1,22 +1,6 @@
-export default function Hero() {
-  const contacts = [
-    {
-      href: "https://www.linkedin.com/in/joseanayala",
-      ariaLabel: "LinkedIn Profile",
-      icon: "fab fa-linkedin fa-2x",
-    },
-    {
-      href: "mailto:joseanluis2@gmail.com",
-      ariaLabel: "Email",
-      icon: "fas fa-envelope fa-2x",
-    },
-    {
-      href: "https://github.com/joseanayala",
-      ariaLabel: "GitHub Profile",
-      icon: "fab fa-github fa-2x",
-    },
-  ];
+import Socials from "./socials";
 
+export default function Hero() {
   return (
     <header className="animate-fadeUp lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:animate-fadeDown lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col items-start">
@@ -36,21 +20,7 @@ export default function Hero() {
           </h2>
         </div>
       </div>
-      <div className="flex items-center justify-start gap-4 pt-4">
-        {contacts.map((contact, i) => (
-          <a
-            href={contact.href}
-            target="_blank"
-            aria-label={contact.ariaLabel}
-            className="pointer-events-auto animate-fadeRight"
-            key={i}
-          >
-            <i
-              className={`${contact.icon} text-highlight transition-all ease-in-out hover:scale-110 hover:text-white`}
-            ></i>
-          </a>
-        ))}
-      </div>
+      <Socials animate />
     </header>
   );
 }

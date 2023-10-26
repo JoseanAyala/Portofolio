@@ -3,6 +3,7 @@ import useClient from "src/utils/useClient";
 import { Article } from "src/types";
 import ArticleGrid from "./ArticleGrid";
 import { Link } from "react-router-dom";
+import Socials from "src/pages/home/socials";
 
 export default function Articles() {
   const [articles, setArticles] = useState<Article[] | undefined>(undefined);
@@ -36,6 +37,12 @@ export default function Articles() {
       {articles && articles.length > 0 && (
         <ArticleGrid articleList={articles} />
       )}
+      <div
+        className="fixed bottom-0 right-6 flex items-center justify-center rounded-t-xl border border-b-0 border-grey
+        bg-zinc-900 px-3 pb-3 pt-2 transition-all ease-in-out hover:bg-zinc-800"
+      >
+        <Socials />
+      </div>
     </div>
   );
 }

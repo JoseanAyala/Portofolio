@@ -10,11 +10,11 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="mx-auto grid max-w-screen-xl grid-cols-2 px-6 pb-2 pt-4 md:px-12 lg:px-24">
+    <nav className=" mx-auto grid max-w-screen-xl grid-cols-2 px-6 pb-2 pt-4 md:px-12 lg:px-24">
       <div className="flex items-end justify-start">
         <Link to="/" className="flex items-center hover:cursor-pointer">
-          <i className="fas fa-home fa-lg text-secondary-100 p-4 pl-0"></i>
-          <h1 className="font-white upper text-secondary-100 ml-[-10px] text-2xl font-bold tracking-tight">
+          <i className="fas fa-home fa-lg p-4 pl-0"></i>
+          <h1 className="font-white upper ml-[-10px] text-2xl font-bold tracking-tight">
             Articles
           </h1>
         </Link>

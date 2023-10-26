@@ -33,7 +33,7 @@ const AuthActions = () => {
     return (
       <button
         onClick={() => loginWithRedirect()}
-        className="whitespace-no-wrap text-secondary-100 rounded-lg p-2 hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
+        className="whitespace-no-wrap rounded-lg p-2 font-medium hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
       >
         Sign In
       </button>
@@ -44,10 +44,8 @@ const AuthActions = () => {
       <button
         type="button"
         aria-label="Logout"
-        onClick={() => {
-          logout();
-        }}
-        className="whitespace-no-wrap text-secondary-100 rounded-lg p-2 hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
+        onClick={() => logout()}
+        className="whitespace-no-wrap rounded-lg p-2 font-medium hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
       >
         Sign out
       </button>

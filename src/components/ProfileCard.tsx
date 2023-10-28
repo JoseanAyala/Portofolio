@@ -45,7 +45,10 @@ export function ProfileCard() {
   return (
     <Card>
       <CardHeader floated={false} className="h-68">
-        <img src="../../assets/profile.png" alt="Profile Image" />
+        <img
+          src="https://github.com/JoseanAyala/portfolio/blob/master/assets/profile.png?raw=true"
+          alt="Profile Image"
+        />
       </CardHeader>
       <CardBody className="text-center">
         <Typography variant="h4" color="blue-gray" className="mb-2">
@@ -85,7 +88,11 @@ export function AvatarCard({
         shadow={false}
         className="mx-0 flex items-center gap-4"
       >
-        <Avatar size={size} src="/assets/profile.png" alt="Profile Image" />
+        <Avatar
+          size={size}
+          src="https://github.com/JoseanAyala/portfolio/blob/master/assets/profile.png?raw=true"
+          alt="Profile Image"
+        />
         {children}
       </CardHeader>
     </Card>

@@ -4,7 +4,7 @@ export default function Hero() {
     <header className="animate-fadeUp lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:animate-fadeDown lg:flex-col lg:justify-between lg:py-24">
       <div className="flex flex-col items-center">
         <img
-          src="/assets/profile.png"
+          src="../../../assets/profile.png"
           alt="Profile Photo"
           className="mb-4 h-64 w-64 rounded-full object-cover object-center shadow-lg shadow-blue-gray-900/50"
         />

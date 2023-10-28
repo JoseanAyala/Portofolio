@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  .font-highlight {
-    text-shadow: theme("colors.highlight") 1px 1px;
-  }
-}
-
 h1.ce-header {
   @apply text-3xl font-bold;
 }
@@ -26,3 +20,54 @@ h5.ce-header {
 h6.ce-header {
   @apply text-base font-semibold;
 }
+
+.ce-block__content,
+.ce-toolbar__content {
+  max-width: calc(100% - 120px) !important;
+}
+.cdx-block {
+  max-width: 100% !important;
+}
+/* 
+@media (prefers-color-scheme: dark) {
+
+  .ce-block {
+    color: #f5f5f5;
+  }
+
+
+  .ce-toolbar__content {
+    background-color: #2d2d2d;
+  }
+
+
+  .ce-toolbar__plus {
+    color: #f5f5f5;
+  }
+
+
+  .ce-block__content a {
+    color: #f5f5f5;
+  }
+
+
+  .ce-block__content a:hover {
+    color: #f5f5f5;
+    text-decoration: underline;
+  }
+  .ce-toolbar__settings-btn svg {
+    color: #f5f5f5 !important;
+  }
+  .ce-inline-toolbar__toggler-and-button-wrapper {
+    color: #000 !important;
+  }
+  .ce-conversion-toolbar__tools {
+    color: black;
+  }
+  .codex-editor ::selection {
+    background-color: theme("colors.primary.500") !important;
+  }
+  .ce-block--selected .ce-block__content {
+    background-color: theme("colors.primary.500") !important;
+  }
+} */

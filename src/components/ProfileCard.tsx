@@ -45,7 +45,7 @@ export function ProfileCard() {
   return (
     <Card>
       <CardHeader floated={false} className="h-68">
-        <img src="/assets/profile.png" alt="Profile Image" />
+        <img src="../../assets/profile.png" alt="Profile Image" />
       </CardHeader>
       <CardBody className="text-center">
         <Typography variant="h4" color="blue-gray" className="mb-2">

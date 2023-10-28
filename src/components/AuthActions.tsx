@@ -1,10 +1,14 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { Button } from "@material-tailwind/react";
 import { useContext, useEffect } from "react";
 import { UserContext } from "src/utils/userContext";
 
-const AuthActions = () => {
+type AuthActionsProps = {
+  fullWidth?: boolean;
+  isMobile?: boolean;
+};
+const AuthActions = ({ fullWidth, isMobile }: AuthActionsProps) => {
   const userContext = useContext(UserContext);
-
   const {
     user,
     isAuthenticated,
@@ -13,6 +17,8 @@ const AuthActions = () => {
     logout,
     getAccessTokenSilently,
   } = useAuth0();
+
+  const buttonClasses = isMobile ? "block" : "hidden lg:inline-block";
 
   useEffect(() => {
     if (!isAuthenticated) return;
@@ -31,25 +37,29 @@ const AuthActions = () => {
 
   if (!isAuthenticated)
     return (
-      <button
+      <Button
+        fullWidth={fullWidth}
         onClick={() => loginWithRedirect()}
-        className="whitespace-no-wrap rounded-lg p-2 font-medium hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
+        aria-label="Sign In"
+        variant="text"
+        size="sm"
+        className={buttonClasses}
       >
         Sign In
-      </button>
+      </Button>
     );
 
   return (
-    <div className="group sticky inline-block">
-      <button
-        type="button"
-        aria-label="Logout"
-        onClick={() => logout()}
-        className="whitespace-no-wrap rounded-lg p-2 font-medium hover:cursor-pointer hover:bg-white hover:bg-opacity-10"
-      >
-        Sign out
-      </button>
-    </div>
+    <Button
+      fullWidth={fullWidth}
+      onClick={() => logout()}
+      aria-label="Sign out"
+      variant="text"
+      size="sm"
+      className={buttonClasses}
+    >
+      Sign out
+    </Button>
   );
 };
 

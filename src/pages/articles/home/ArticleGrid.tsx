@@ -27,17 +27,17 @@ export default function AllArticles({ articleList }: props) {
             <div className="max-w-full rounded-lg bg-neutral-900 p-4 shadow">
               <div className="p-5">
                 <Link to={`/articles/${article.id}`}>
-                  <h2 className="mb-2 text-2xl font-bold tracking-tight text-white">
+                  <h2 className="mb-2 text-2xl font-bold tracking-tight">
                     {article.title}
                   </h2>
                 </Link>
-                <p className="mb-3 font-normal text-white text-opacity-70">
+                <p className="mb-3 font-normal  text-opacity-70">
                   {article.description}
                 </p>
                 <Link
                   to={`/articles/${article.id}`}
-                  className="bg-secondary-700 hover:bg-secondary-900 inline-flex items-center rounded-lg px-3 py-2
-                   font-medium text-white transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-white"
+                  className="bg-light-blue-700 hover:bg-light-blue-900 inline-flex items-center rounded-lg px-3 py-2
+                   font-medium  transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-white"
                 >
                   Read more
                   <svg

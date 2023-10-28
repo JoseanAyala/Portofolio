@@ -1,5 +1,42 @@
 import { Content } from "src/types";
 
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+} from "@material-tailwind/react";
+
+export function SimpleCard({ experience }: { experience: Content }) {
+  return (
+    <Card
+      shadow
+      className="w-full bg-blue-gray-50 transition-all hover:bg-light-blue-100"
+    >
+      <CardBody>
+        <Typography variant="h4" color="blue-gray" className="mb-1">
+          {experience.title}
+        </Typography>
+        <Typography variant="h5" color="blue-gray" className="mb-2">
+          {experience.subTitle}
+        </Typography>
+        <Typography color="blue-gray">{experience.description}</Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        {experience.tags.map((tag, tagI) => (
+          <Typography
+            color="blue-gray"
+            className="mb-2 mr-1 inline-block rounded-full border-2 border-solid border-light-blue-700 px-3 py-2 text-sm"
+            key={tagI}
+          >
+            {tag}
+          </Typography>
+        ))}
+      </CardFooter>
+    </Card>
+  );
+}
+
 export default function Experiences() {
   const experiences: Content[] = [
     {
@@ -37,45 +74,22 @@ export default function Experiences() {
           rel="noopener noreferrer"
           className="pointer-events-auto "
         >
-          <div
-            className="grid grid-cols-4 rounded-xl bg-neutral-900 p-4 shadow
-        transition-all ease-in-out hover:cursor-pointer hover:bg-neutral-800 hover:shadow-neon"
-          >
-            <div className="text-md italic text-white">{exp.date}</div>
-            <div className="col-span-3 flex flex-col items-start justify-start px-4">
-              <div>
-                <div className="text-xl font-bold text-white">{exp.title}</div>
-                <div className="mb-1 font-semibold text-white text-opacity-70">
-                  {exp.subTitle}
-                </div>
-              </div>
-              <div>
-                <span className="font-light text-opacity-70">
-                  {exp.description}{" "}
-                </span>
-                <div className="pt-2">
-                  {exp.tags.map((tag, tagI) => (
-                    <div
-                      className="border-primary-500 mb-2 mr-1 inline-block rounded-full border-2 border-solid px-3 py-2"
-                      key={tagI}
-                    >
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <SimpleCard experience={exp}></SimpleCard>
         </a>
       </li>
     ));
   };
 
   return (
-    <section aria-label="Experience">
-      <h3 className="text-secondary-100 text-4xl font-bold tracking-tight">
+    <section aria-label="Experience" className="mb-6">
+      <Typography
+        textGradient
+        variant="h3"
+        color="light-blue"
+        className="text-4xl font-bold tracking-tight"
+      >
         Experience
-      </h3>
+      </Typography>
       <ul>{renderExperiences()}</ul>
     </section>
   );

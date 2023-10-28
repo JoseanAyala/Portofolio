@@ -55,7 +55,7 @@ export function ProfileCard() {
           Software Engineer
         </Typography>
       </CardBody>
-      <CardFooter className="flex justify-center gap-4 pt-2">
+      <CardFooter className="flex items-center justify-center gap-4 pt-2">
         <Socials />
       </CardFooter>
     </Card>

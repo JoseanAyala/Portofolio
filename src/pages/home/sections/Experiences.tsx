@@ -11,7 +11,7 @@ export function SimpleCard({ experience }: { experience: Content }) {
   return (
     <Card
       shadow
-      className="w-full bg-blue-gray-50 transition-all hover:bg-light-blue-100"
+      className="w-full bg-blue-gray-50 from-light-blue-50 to-blue-100 transition-all hover:bg-gradient-to-r"
     >
       <CardBody>
         <Typography variant="h4" color="blue-gray" className="mb-1">

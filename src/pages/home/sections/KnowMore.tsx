@@ -6,7 +6,7 @@ export default function KnowMore() {
     <section className="mb-12" aria-label="Know more">
       <Link
         to={"/articles"}
-        className="group pointer-events-auto flex w-full flex-col items-start justify-center rounded-3xl bg-blue-gray-50 p-6 hover:bg-light-blue-100"
+        className="group pointer-events-auto flex w-full flex-col items-start justify-center rounded-3xl bg-blue-gray-50 from-light-blue-50 to-blue-100 p-6 hover:bg-gradient-to-r"
       >
         <div className="item-center flex">
           <Typography color="blue-gray" className="font-normal">

@@ -4,7 +4,7 @@ import Homepage from "src/pages/home/Homepage";
 import Articles from "./pages/articles/home/Articles";
 import ArticleEditor from "./pages/articles/editor/ArticleEditor";
 import ArticleView from "./pages/articles/view/ArticleView";
-import ScrollToTop from "src/components/scrollToTop";
+import ScrollToTop from "src/utils/useTopNavigation";
 import { ThemeProvider } from "@material-tailwind/react";
 import { Auth0Provider } from "@auth0/auth0-react";
 

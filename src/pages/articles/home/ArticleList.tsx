@@ -1,26 +1,65 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Button, Typography } from "@material-tailwind/react";
 import { Article } from "src/types";
-import Pagination from "src/components/Pagination";
-import { useState } from "react";
-import { Button } from "@material-tailwind/react";
 
-type props = {
+interface Props {
   articleList: Article[];
-};
+}
 
-export default function AllArticles({ articleList }: props) {
+function CreateButton() {
+  return (
+    <Link
+      to={"/articles/create"}
+      className="group pointer-events-auto mb-4 flex w-full flex-col items-start justify-center rounded-full bg-blue-gray-50 from-light-blue-50 to-blue-100 p-6 transition-all ease-in-out hover:bg-gradient-to-r"
+    >
+      <div className="flex items-center justify-center">
+        <i className="fas fa-edit fa-lg mr-4"></i>
+
+        <Typography variant="lead" className="font-normal">
+          Create a new article
+        </Typography>
+      </div>
+    </Link>
+  );
+}
+
+export default function ArticleGrid({ articleList }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
-
+  const [currentArticles, setCurrentArticles] = useState<Article[]>([]);
   const pageSize = 6;
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = startIndex + pageSize;
-  const currentArticles = articleList.slice(startIndex, endIndex);
+
+  useEffect(() => {
+    setCurrentArticles(articleList.slice(0, pageSize));
+  }, [articleList]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop ===
+        document.documentElement.offsetHeight
+      ) {
+        setCurrentPage((prevPage) => prevPage + 1);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const newArticles = articleList.slice(startIndex, endIndex);
+    setCurrentArticles((prevArticles) => [...prevArticles, ...newArticles]);
+  }, [currentPage, articleList]);
 
   return (
     <div>
+      <CreateButton />
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-1">
         {currentArticles.map((article) => (
           <li key={article.id}>
@@ -67,12 +106,6 @@ export default function AllArticles({ articleList }: props) {
           </li>
         ))}
       </ul>
-      <Pagination
-        currentPage={currentPage}
-        pageSize={pageSize}
-        totalItems={articleList.length}
-        onPageChange={handlePageChange}
-      />
     </div>
   );
 }

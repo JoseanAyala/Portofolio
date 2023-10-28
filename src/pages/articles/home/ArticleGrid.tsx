@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Article } from "src/types";
 import Pagination from "src/components/Pagination";
 import { useState } from "react";
+import { Button } from "@material-tailwind/react";
 
 type props = {
   articleList: Article[];
@@ -18,43 +19,48 @@ export default function AllArticles({ articleList }: props) {
   const endIndex = startIndex + pageSize;
   const currentArticles = articleList.slice(startIndex, endIndex);
 
-  // TODO: ADD EDIT BUTTON NEXT TO TITLE
   return (
     <div>
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-1">
         {currentArticles.map((article) => (
           <li key={article.id}>
-            <div className="max-w-full rounded-lg bg-neutral-900 p-4 shadow">
+            <div className="bg-neutral-900 max-w-full rounded-lg p-4 shadow">
               <div className="p-5">
-                <Link to={`/articles/${article.id}`}>
-                  <h2 className="mb-2 text-2xl font-bold tracking-tight">
-                    {article.title}
-                  </h2>
-                </Link>
+                <div className="flex items-center justify-start">
+                  <Link to={`/articles/${article.id}`}>
+                    <h2 className="mb-2 inline-block text-2xl font-bold tracking-tight">
+                      {article.title}
+                    </h2>
+                  </Link>
+
+                  <Link to={`/articles/edit/${article.id}`}>
+                    <i className="fas fa-pencil-alt -translate-y-1 px-2 hover:scale-110"></i>
+                  </Link>
+                </div>
                 <p className="mb-3 font-normal  text-opacity-70">
                   {article.description}
                 </p>
-                <Link
-                  to={`/articles/${article.id}`}
-                  className="bg-light-blue-700 hover:bg-light-blue-900 inline-flex items-center rounded-lg px-3 py-2
-                   font-medium  transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-white"
-                >
-                  Read more
-                  <svg
-                    className="ml-2 h-3.5 w-3.5"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
+                <Link to={`/articles/${article.id}`}>
+                  <Button
+                    variant="gradient"
+                    className="flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500"
                   >
-                    <path
+                    Read More{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
                       stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
+                      className="h-5 w-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+                      />
+                    </svg>
+                  </Button>
                 </Link>
               </div>
             </div>

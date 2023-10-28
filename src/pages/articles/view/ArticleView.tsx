@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom";
 import { Article as TArticle } from "src/types";
 import useClient from "src/utils/useClient";
 import { OutputBlockData, OutputData } from "@editorjs/editorjs";
+import { StickyNavbar } from "src/components/StickyNavbar";
+import { AvatarCard } from "src/components/ProfileCard";
+import { Typography } from "@material-tailwind/react";
+import Socials from "src/components/Socials";
 
 export default function ArticleView() {
   const { get, baseUrl } = useClient();
@@ -14,15 +18,20 @@ export default function ArticleView() {
     switch (block.type) {
       case "header":
         return (
-          <h2 key={block.id} className="mb-2 text-2xl font-bold">
+          <Typography
+            variant="h2"
+            as={"h2"}
+            key={block.id}
+            className="mb-2 text-2xl font-bold"
+          >
             {block.data.text}
-          </h2>
+          </Typography>
         );
       case "paragraph":
         return (
-          <p key={block.id} className="mb-1">
+          <Typography key={block.id} className="mb-1">
             {block.data.text}
-          </p>
+          </Typography>
         );
       case "list":
         return (
@@ -68,22 +77,50 @@ export default function ArticleView() {
     fetchArticle();
   }, []);
 
+  const articleDate = new Date(article?.dateCreated || "");
+
   return (
-    <div className="mx-auto px-6 py-12 md:px-12 lg:px-24">
-      {article ? (
-        <div className="rounded-lg py-8">
-          <h1 className="mb-2 text-3xl font-bold text-white">
-            {article.title}
-          </h1>
-          <p className="mb-4  text-sm text-gray-100">
-            Created: {article.dateCreated}
-          </p>
-          <p className="mb-4 text-gray-100">{article.description}</p>
-          {outputData.blocks.map((block) => renderBlock(block))}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <>
+      <StickyNavbar />
+      <div className="container mx-auto max-w-screen-xl px-4 py-12 md:px-12 lg:px-24 ">
+        {article ? (
+          <div className="rounded-lg pt-4">
+            <Typography variant="h1" className="text-7xl">
+              {article.title}
+            </Typography>
+
+            <AvatarCard size="xl" padding="p-0">
+              <div className="flex w-full flex-col gap-0.5">
+                <div className="flex flex-col items-start">
+                  <Typography
+                    variant="h5"
+                    as="div"
+                    className="text-blue-gray-900 dark:text-white"
+                  >
+                    Josean Ayala
+                  </Typography>
+
+                  <Typography variant="small">
+                    {articleDate.toLocaleString("default", {
+                      month: "long",
+                    })}{" "}
+                    {articleDate.getDate()} {articleDate.getFullYear()}
+                  </Typography>
+                  <div className="flex justify-start gap-4 p-0.5">
+                    <Socials size="fa-lg" />
+                  </div>
+                </div>
+              </div>
+            </AvatarCard>
+
+            <hr className="my-8" />
+
+            {outputData.blocks.map((block) => renderBlock(block))}
+          </div>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    </>
   );
 }

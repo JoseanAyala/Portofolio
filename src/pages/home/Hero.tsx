@@ -1,4 +1,3 @@
-import Socials from "../../components/Socials";
 import { Typography } from "@material-tailwind/react";
 export default function Hero() {
   return (
@@ -29,9 +28,6 @@ export default function Hero() {
             seamless solutions.
           </Typography>
         </div>
-      </div>
-      <div className="flex items-center justify-center gap-4 pt-4">
-        <Socials animate />
       </div>
     </header>
   );

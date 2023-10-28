@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import useClient from "src/utils/useClient";
 import { Article } from "src/types";
-import ArticleGrid from "./ArticleGrid";
-import Socials from "src/components/Socials";
+import ArticleGrid from "./ArticleList";
 import ProfileCard from "src/components/ProfileCard";
+import { StickyNavbar } from "src/components/StickyNavbar";
 
 export default function Articles() {
   const [articles, setArticles] = useState<Article[] | undefined>(undefined);
@@ -20,21 +20,18 @@ export default function Articles() {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-6 p-6 md:px-12 md:py-8 lg:px-24">
-      <div>
-        <ProfileCard></ProfileCard>
+    <>
+      <StickyNavbar />
+      <div className="container mx-auto p-4 md:px-12 md:py-8 lg:flex lg:gap-8 lg:p-8 lg:px-24">
+        <div className="mx-auto flex w-full justify-center lg:sticky lg:top-0 lg:w-1/3 lg:flex-col lg:justify-between">
+          <ProfileCard />
+        </div>
+        <div className="w-full">
+          {articles && articles.length > 0 && (
+            <ArticleGrid articleList={articles} />
+          )}
+        </div>
       </div>
-      <div className="col-span-2">
-        {articles && articles.length > 0 && (
-          <ArticleGrid articleList={articles} />
-        )}
-        {/* <div
-          className="fixed bottom-0 left-0 right-0 flex items-center justify-around gap-4 bg-neutral-800
-        p-4 transition-all ease-in-out md:left-auto md:right-4 md:rounded-t-xl"
-        >
-          <Socials />
-        </div> */}
-      </div>
-    </div>
+    </>
   );
 }

@@ -1,8 +1,14 @@
 type props = {
   animate?: boolean;
   size?: string;
+  color?: string;
 };
-export default function Socials({ animate, size = "fa-2x" }: props) {
+
+export default function Socials({
+  animate,
+  color = "text-light-blue-500",
+  size = "fa-2x",
+}: props) {
   const animation = `pointer-events-auto ${animate ? "animate-fadeRight" : ""}`;
   const contacts = [
     {
@@ -32,7 +38,7 @@ export default function Socials({ animate, size = "fa-2x" }: props) {
           key={i}
         >
           <i
-            className={`${contact.icon} text-primary-500 transition-all ease-in-out hover:scale-110`}
+            className={`${contact.icon} ${color} transition-all ease-in-out hover:scale-110`}
           ></i>
         </a>
       ))}

@@ -4,9 +4,9 @@ import Homepage from "src/pages/home/Homepage";
 import Articles from "./pages/articles/home/Articles";
 import ArticleEditor from "./pages/articles/editor/ArticleEditor";
 import ArticleView from "./pages/articles/view/ArticleView";
-import ScrollToTop from "src/utils/scrollToTop";
-import { Auth0Provider } from "@auth0/auth0-react";
+import ScrollToTop from "src/components/scrollToTop";
 import { ThemeProvider } from "@material-tailwind/react";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 export default function App() {
   return (
@@ -18,8 +18,8 @@ export default function App() {
         audience: "https://gojayala.onrender.com/",
       }}
     >
-      <ThemeProvider>
-        <UserContextProvider>
+      <UserContextProvider>
+        <ThemeProvider>
           <BrowserRouter>
             <ScrollToTop />
             <Routes>
@@ -30,8 +30,8 @@ export default function App() {
               <Route path="/articles/create" element={<ArticleEditor />} />
             </Routes>
           </BrowserRouter>
-        </UserContextProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </UserContextProvider>
     </Auth0Provider>
   );
 }

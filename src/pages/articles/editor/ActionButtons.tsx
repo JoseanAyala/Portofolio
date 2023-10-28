@@ -1,76 +1,39 @@
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import useClient from "src/utils/useClient";
+import { Button } from "@material-tailwind/react";
 
 type props = {
-  buildPayload: () => Promise<any | undefined>;
+  handlePublish: () => void;
+  handleEdit: () => void;
+  handleDelete: () => void;
 };
 
-export default function ActionButtons({ buildPayload }: props) {
+export default function ActionButtons({
+  handlePublish,
+  handleEdit,
+  handleDelete,
+}: props) {
   const { id } = useParams<{ id: string }>();
-  const nav = useNavigate();
-  const { post, put, del, baseUrl } = useClient();
-
-  const handleDelete = async () => {
-    const [_, err] = await del(`${baseUrl}/articles/delete/${id}`);
-    if (err) return;
-
-    // TODO: Success banner.
-    nav(`/articles`);
-  };
-
-  const handlePublish = async () => {
-    const payload = await buildPayload();
-    if (!payload) return;
-
-    const [res, err] = await post(`${baseUrl}/articles/create`, payload);
-    if (err) return;
-
-    nav(`/articles/${res.id}`);
-  };
-  const handleEdit = async () => {
-    const payload = await buildPayload();
-    if (!payload) return;
-
-    const [_, err] = await put(`${baseUrl}/articles/edit/${id}`, payload);
-    if (err) return;
-
-    // TODO: Success banner.
-  };
 
   return (
-    <div className="flex justify-end">
+    <div className="flex justify-end gap-2">
       {id ? (
         <>
-          <button
+          <Button
+            variant="text"
+            color="red"
             onClick={handleDelete}
             type="button"
-            className="hover: mr-2 inline-flex items-center rounded-lg bg-black px-3 py-2 text-center
-     text-sm font-medium text-red-500  transition-all ease-in-out hover:bg-red-700
-     hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
           >
             Delete
-          </button>
-          <button
-            onClick={handleEdit}
-            type="button"
-            className="inline-flex items-center rounded-lg bg-grey  px-3 py-2 text-center text-sm font-medium
-     text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2
-     focus:ring-white"
-          >
+          </Button>
+          <Button onClick={handleEdit} type="button">
             Edit
-          </button>
+          </Button>
         </>
       ) : (
-        <button
-          onClick={handlePublish}
-          type="button"
-          className="bg- inline-flex items-center rounded-lg px-3 py-2 text-center text-sm font-medium
-     text-white transition-all ease-in-out  hover:bg-white hover:text-black focus:outline-none focus:ring-2
-     focus:ring-white"
-        >
+        <Button onClick={handlePublish} type="button">
           Publish
-        </button>
+        </Button>
       )}
     </div>
   );

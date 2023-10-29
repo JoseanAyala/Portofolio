@@ -12,13 +12,9 @@ type Props = {
 export default function ArticleInfiniteScroll({ articleList }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentArticles, setCurrentArticles] = useState<Article[]>([]);
-  const pageSize = 8;
+  const pageSize = 6;
   const { isAuthenticated } = useAuth0();
   const userContext = useContext(UserContext);
-
-  useEffect(() => {
-    setCurrentArticles(articleList!.slice(0, pageSize));
-  }, [articleList]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +40,10 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
     setCurrentArticles((prevArticles) => [...prevArticles, ...newArticles]);
   }, [currentPage, articleList]);
 
+  useEffect(() => {
+    setCurrentArticles(articleList!.slice(0, pageSize));
+  }, [articleList]);
+
   return (
     <ul className="grid grid-cols-1 gap-4 md:grid-cols-1">
       {currentArticles.map((article) => (
@@ -68,7 +68,7 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
               <Link to={`/articles/${article.id}`}>
                 <Button
                   variant="gradient"
-                  className="flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500"
                 >
                   Read More{" "}
                   <svg

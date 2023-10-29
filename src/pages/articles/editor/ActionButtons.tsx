@@ -72,8 +72,8 @@ const PublishButton = ({
   const mutation = useMutation({
     mutationFn: (payload: Payload) =>
       post(`${baseUrl}/articles/create`, payload),
-    onSuccess: (id) => {
-      nav(`/articles/${id}`);
+    onSuccess: (res: any) => {
+      nav(`/articles/${res.id}`);
     },
     onError: () => {
       setShowError(true);
@@ -108,7 +108,7 @@ const UpdateButton = ({
   const mutation = useMutation({
     mutationFn: (payload: Payload) =>
       put(`${baseUrl}/articles/edit/${id}`, payload),
-    onSuccess: (id) => {
+    onSuccess: () => {
       nav(`/articles/${id}`);
     },
     onError: () => {

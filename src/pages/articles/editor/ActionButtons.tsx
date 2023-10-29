@@ -27,7 +27,7 @@ export default function ActionButtons({
             Delete
           </Button>
           <Button onClick={handleEdit} type="button">
-            Edit
+            Update
           </Button>
         </>
       ) : (

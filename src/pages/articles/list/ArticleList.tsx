@@ -14,7 +14,7 @@ export default function ArticleSection() {
     data: posts,
     error,
     isLoading,
-  } = useQuery<Article[], Error>("postsData", getArticles);
+  } = useQuery<Article[], Error>("getArticles", getArticles);
 
   if (isLoading)
     return Array(4)

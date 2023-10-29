@@ -23,6 +23,7 @@ const PreviewToggleButton = () => {
       color={userContext?.isPreview ? "light-blue" : undefined}
       variant={userContext?.isPreview ? "gradient" : "outlined"}
       className="h-8"
+      fullWidth
     >
       Preview as Admin
     </Button>
@@ -55,10 +56,7 @@ export function StickyNavbar({ socialMode = false }) {
             <i className="fa fa-home fa-lg"></i>
           </Link>
           <div className="flex items-center gap-4">
-            <div className="mr-4 hidden lg:block">
-              {/* <PreviewToggleButton /> */}
-            </div>
-            <div className="flex items-center gap-x-1">
+            <div className="hidden lg:block">
               {isAuthenticated ? (
                 <Button
                   onClick={() => logout()}

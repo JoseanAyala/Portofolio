@@ -34,8 +34,12 @@ const renderBlock = (block: OutputBlockData) => {
       );
     case "paragraph":
       return (
-        <Typography key={block.id} className="mb-1">
-          {block.data.text}
+        <Typography
+          key={block.id}
+          className="mb-1"
+          dangerouslySetInnerHTML={{ __html: block.data.text }}
+        >
+          {null}
         </Typography>
       );
     case "list":
@@ -70,6 +74,7 @@ const renderBlock = (block: OutputBlockData) => {
       return null;
   }
 };
+
 function ArticleContent() {
   const { id } = useParams<{ id: string }>();
   const { get, baseUrl } = useClient();

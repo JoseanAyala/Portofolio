@@ -19,6 +19,8 @@ export default function ArticleSection() {
   } = useQuery<Article[], Error>("getArticles", getArticles);
 
   useEffect(() => {
+    if (!isLoading) setShowLoadingMessage(false);
+
     const timer = setTimeout(() => {
       if (isLoading) {
         setShowLoadingMessage(true);
@@ -35,8 +37,9 @@ export default function ArticleSection() {
           <PopupAlert
             open={showLoadingMessage}
             setOpen={setShowLoadingMessage}
+            autoClose={false}
             color="gray"
-            message="Delayed Response Due to Server Sleep Mode (Free Tier) 🤭"
+            message="Delayed server response is due to server free tier, hang tight. 🤭"
             animate={{
               mount: { y: 0 },
               unmount: { y: -100 },

@@ -16,6 +16,7 @@ type props = {
     mount: { y: number };
     unmount: { y: number };
   };
+  autoClose?: boolean;
 };
 
 export default function PopupAlert({
@@ -26,8 +27,9 @@ export default function PopupAlert({
   timeout,
   variant,
   animate,
+  autoClose = true,
 }: props) {
-  if (open) {
+  if (autoClose && open) {
     setTimeout(() => {
       setOpen(false);
     }, timeout || 5000);

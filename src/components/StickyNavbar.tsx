@@ -6,7 +6,7 @@ import {
   Collapse,
   Typography,
 } from "@material-tailwind/react";
-import AuthHandler from "./AuthActions";
+import AuthHandler from "../utils/AuthActions";
 import Socials from "./Socials";
 import { Link } from "react-router-dom";
 import { UserContext } from "src/utils/userContext";

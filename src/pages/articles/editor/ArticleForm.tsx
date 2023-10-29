@@ -1,7 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import useClient from "src/utils/useClient";
 import ActionButtons from "./ActionButtons";
-import { useNavigate } from "react-router-dom";
 import { Article } from "src/types";
 import EditorJS, { OutputData } from "@editorjs/editorjs";
 import Header from "@editorjs/header";
@@ -13,8 +11,6 @@ export default function ArticleForm({
   articleData?: Article;
   isLoading: boolean;
 }) {
-  const nav = useNavigate();
-  const { post, put, del, baseUrl } = useClient();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -32,26 +28,6 @@ export default function ArticleForm({
     };
 
     return payload;
-  };
-
-  const handleDelete = async () => {
-    if (!articleData) return;
-    await del(`${baseUrl}/articles/delete/${articleData.id}`);
-    nav(`/articles`);
-  };
-
-  const handlePublish = async () => {
-    const payload = await buildPayload();
-    if (!payload) return;
-    await post(`${baseUrl}/articles/create`, payload);
-    nav(`/articles`);
-  };
-
-  const handleEdit = async () => {
-    const payload = await buildPayload();
-    if (!payload || !articleData) return;
-    await put(`${baseUrl}/articles/edit/${articleData.id}`, payload);
-    nav(`/articles/${articleData.id}`);
   };
 
   useEffect(() => {
@@ -123,11 +99,7 @@ export default function ArticleForm({
         />
       </div>
 
-      <ActionButtons
-        handleDelete={handleDelete}
-        handleEdit={handleEdit}
-        handlePublish={handlePublish}
-      />
+      <ActionButtons buildPayload={buildPayload} />
     </form>
   );
 }

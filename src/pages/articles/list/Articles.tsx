@@ -1,4 +1,4 @@
-import ArticleGrid from "./ArticleList";
+import ArticleList from "./ArticleList";
 import ProfileCard from "src/components/ProfileCard";
 import { StickyNavbar } from "src/components/StickyNavbar";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ function CreateButton() {
       className="group pointer-events-auto mb-4 flex w-full flex-col items-center  justify-center rounded-full bg-blue-gray-50 from-light-blue-50 to-blue-100 px-6 py-4 transition-all ease-in-out hover:bg-gradient-to-r lg:items-start"
     >
       <div className="flex items-center justify-center">
-        <i className="fas fa-edit mr-4 h-5 w-5"></i>
+        <i className="fas fa-edit mr-4 h-5 w-5 lg:ml-4"></i>
         <Typography variant="lead">Create a new article</Typography>
       </div>
     </Link>
@@ -35,7 +35,7 @@ export default function Articles() {
             View all articles
           </Typography>
           {(isAuthenticated || userContext?.isPreview) && <CreateButton />}
-          <ArticleGrid />
+          <ArticleList />
         </div>
       </div>
     </>

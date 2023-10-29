@@ -46,19 +46,27 @@ export function ProfileCard() {
     <Card>
       <CardHeader floated={false} className="h-68">
         <img
-          src="https://github.com/JoseanAyala/portfolio/blob/master/assets/profile.png?raw=true"
+          src="https://avatars.githubusercontent.com/u/36864389?v=4"
           alt="Profile Image"
         />
       </CardHeader>
       <CardBody className="text-center">
-        <Typography variant="h4" color="blue-gray" className="mb-2">
+        <Typography
+          variant="h4"
+          color="blue-gray"
+          className="mb-2 lg:text-xl xl:text-2xl"
+        >
           Josean Ayala
         </Typography>
-        <Typography color="blue-gray" className="font-medium" textGradient>
+        <Typography
+          color="blue-gray"
+          className="font-medium lg:text-sm xl:text-lg"
+          textGradient
+        >
           Software Engineer
         </Typography>
       </CardBody>
-      <CardFooter className="flex items-center justify-center gap-4 pt-2">
+      <CardFooter className="flex items-center justify-center gap-4 pt-1">
         <Socials />
       </CardFooter>
     </Card>
@@ -77,11 +85,7 @@ export function AvatarCard({
   size = "xxl",
 }: TAvatarCard) {
   return (
-    <Card
-      color="transparent"
-      shadow={false}
-      className={`w-full max-w-[26rem] ${padding}`}
-    >
+    <Card color="transparent" shadow={false} className={`w-[275px] ${padding}`}>
       <CardHeader
         color="transparent"
         floated={false}
@@ -90,7 +94,7 @@ export function AvatarCard({
       >
         <Avatar
           size={size}
-          src="https://github.com/JoseanAyala/portfolio/blob/master/assets/profile.png?raw=true"
+          src="https://avatars.githubusercontent.com/u/36864389?v=4"
           alt="Profile Image"
         />
         {children}

@@ -5,12 +5,33 @@ import {
   IconButton,
   Button,
 } from "@material-tailwind/react";
-import AuthActions from "./AuthActions";
+import AuthHandler from "./AuthActions";
 import Socials from "./Socials";
 import { Link } from "react-router-dom";
+import { UserContext } from "src/utils/userContext";
+
+const PreviewToggleButton = () => {
+  const userContext = React.useContext(UserContext);
+  const handlePreviewToggle = () => {
+    userContext?.setIsPreview((prev) => !prev);
+  };
+
+  return (
+    <Button
+      onClick={handlePreviewToggle}
+      size="sm"
+      color={userContext?.isPreview ? "light-blue" : undefined}
+      variant={userContext?.isPreview ? "gradient" : "outlined"}
+      className="h-8"
+    >
+      Preview as Admin
+    </Button>
+  );
+};
 
 export function StickyNavbar({ socialMode = false }) {
   const [openNav, setOpenNav] = React.useState(false);
+  const { isAuthenticated, logout } = AuthHandler();
 
   React.useEffect(() => {
     window.addEventListener(
@@ -18,12 +39,6 @@ export function StickyNavbar({ socialMode = false }) {
       () => window.innerWidth >= 960 && setOpenNav(false),
     );
   }, []);
-
-  const ChangeViewButton = (
-    <Button fullWidth size="sm" variant="text">
-      Change View
-    </Button>
-  );
 
   return (
     <Navbar
@@ -40,9 +55,22 @@ export function StickyNavbar({ socialMode = false }) {
             <i className="fa fa-home fa-lg"></i>
           </Link>
           <div className="flex items-center gap-4">
-            <div className="mr-4 hidden lg:block">{ChangeViewButton}</div>
+            <div className="mr-4 hidden lg:block">
+              {/* <PreviewToggleButton /> */}
+            </div>
             <div className="flex items-center gap-x-1">
-              <AuthActions />
+              {isAuthenticated ? (
+                <Button
+                  onClick={() => logout()}
+                  aria-label="Sign out"
+                  variant="outlined"
+                  size="sm"
+                >
+                  Sign out
+                </Button>
+              ) : (
+                <PreviewToggleButton />
+              )}
             </div>
             <IconButton
               variant="text"
@@ -86,8 +114,7 @@ export function StickyNavbar({ socialMode = false }) {
       )}
       <MobileNav open={openNav}>
         <div className="flex items-center justify-end gap-x-1 p-2">
-          {ChangeViewButton}
-          <AuthActions fullWidth isMobile />
+          <PreviewToggleButton />
         </div>
       </MobileNav>
     </Navbar>

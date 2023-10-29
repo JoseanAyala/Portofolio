@@ -39,7 +39,7 @@ export default function ArticleSection() {
             setOpen={setShowLoadingMessage}
             autoClose={false}
             color="gray"
-            message="Delayed server response is due to server free tier, hang tight. 🤭"
+            message="Apologies for the delay. Response time may be slower due to free-tier server, hang tight. 🤭"
             animate={{
               mount: { y: 0 },
               unmount: { y: -100 },

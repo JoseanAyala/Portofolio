@@ -1,9 +1,10 @@
 import React from "react";
 import {
   Navbar,
-  MobileNav,
   IconButton,
   Button,
+  Collapse,
+  Typography,
 } from "@material-tailwind/react";
 import AuthHandler from "./AuthActions";
 import Socials from "./Socials";
@@ -22,6 +23,7 @@ const PreviewToggleButton = () => {
       size="sm"
       color={userContext?.isPreview ? "light-blue" : undefined}
       variant={userContext?.isPreview ? "gradient" : "outlined"}
+      aria-label="Preview as Admin"
       className="h-8"
       fullWidth
     >
@@ -53,7 +55,9 @@ export function StickyNavbar({ socialMode = false }) {
       ) : (
         <div className="mx-auto flex max-w-screen-xl items-center justify-between text-blue-gray-900 dark:text-blue-gray-100  ">
           <Link className="flex items-center gap-2 text-xl font-medium" to="/">
-            <i className="fa fa-home fa-lg"></i>
+            <i className="fa fa-home fa-lg" aria-hidden></i>
+            <Typography>Home</Typography>
+            <hr className="mx-2 h-8 border-r border-black/10" />
           </Link>
           <div className="flex items-center gap-4">
             <div className="hidden lg:block">
@@ -74,6 +78,7 @@ export function StickyNavbar({ socialMode = false }) {
               variant="text"
               className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
               ripple={false}
+              aria-label="Open Mobile Menu"
               onClick={() => setOpenNav(!openNav)}
             >
               {openNav ? (
@@ -110,11 +115,11 @@ export function StickyNavbar({ socialMode = false }) {
           </div>
         </div>
       )}
-      <MobileNav open={openNav}>
+      <Collapse open={openNav}>
         <div className="flex items-center justify-end gap-x-1 p-2">
           <PreviewToggleButton />
         </div>
-      </MobileNav>
+      </Collapse>
     </Navbar>
   );
 }

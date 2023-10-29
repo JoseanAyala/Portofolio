@@ -20,9 +20,9 @@ export default function ActionButtons({
         <>
           <Button
             variant="text"
-            color="red"
-            onClick={handleDelete}
             type="button"
+            className="text-red-700"
+            onClick={handleDelete}
           >
             Delete
           </Button>

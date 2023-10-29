@@ -79,42 +79,47 @@ export default function ArticleForm({
       });
     }
     handleAsyncInit();
-  }, [articleData]);
+  }, [articleData, isLoading]);
 
   return (
-    <div className={isLoading ? "pointer-events-none" : ""}>
+    <form className={isLoading ? "pointer-events-none" : ""}>
       <div className="mb-6">
-        <label htmlFor="large-input" className="text-md mb-2 block font-medium">
+        <label htmlFor="title-input" className="text-md mb-2 block font-medium">
           Title
         </label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          id="large-input"
-          className="bg-darkestBlue block w-full rounded-lg border border-gray-300 p-4 px-10 text-lg focus:border-blue-500 focus:ring-blue-500 "
+          id="title-input"
+          placeholder="Write a Title here..."
+          className="block w-full rounded-lg border border-gray-300 p-4 px-10 text-lg focus:border-blue-500 focus:ring-blue-500 "
         />
       </div>
       <div className="mb-6">
-        <label htmlFor="message" className="text-md mb-2 block font-medium ">
+        <label
+          htmlFor="description-input"
+          className="text-md mb-2 block font-medium "
+        >
           Description
         </label>
         <textarea
-          id="message"
+          id="description-input"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
-          className="text-md bg-darkestBlue block w-full rounded-lg border border-gray-300 px-10 py-4 focus:border-blue-500 focus:ring-blue-500"
+          className="text-md block w-full rounded-lg border border-gray-300 px-10 py-4 focus:border-blue-500 focus:ring-blue-500"
           placeholder="Write a description here..."
         ></textarea>
       </div>
       <div className="mb-6">
-        <label htmlFor="editor" className="text-md mb-2 block font-medium ">
+        <div id="editorLabel" className="text-md mb-2 block font-medium ">
           Body
-        </label>
+        </div>
         <div
           id="editor"
-          className=" bg-darkestBlue pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg border py-4"
+          aria-labelledby="editorLabel"
+          className="pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg border py-4"
         />
       </div>
 
@@ -123,6 +128,6 @@ export default function ArticleForm({
         handleEdit={handleEdit}
         handlePublish={handlePublish}
       />
-    </div>
+    </form>
   );
 }

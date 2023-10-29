@@ -1,14 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Article } from "src/types";
 import { OutputBlockData, OutputData } from "@editorjs/editorjs";
 import { StickyNavbar } from "src/components/StickyNavbar";
 import { AvatarCard } from "src/components/ProfileCard";
-import { Typography } from "@material-tailwind/react";
+import { Button, Typography } from "@material-tailwind/react";
 import useClient from "src/utils/useClient";
 import { useQuery } from "react-query";
 import Socials from "src/components/Socials";
 import CardSkeleton from "src/components/CardSkeleton";
-
+import useUserState from "src/utils/useUserState";
 export default function ArticleView() {
   return (
     <>
@@ -73,6 +73,8 @@ const renderBlock = (block: OutputBlockData) => {
 function ArticleContent() {
   const { id } = useParams<{ id: string }>();
   const { get, baseUrl } = useClient();
+  const userContext = useUserState();
+  const nav = useNavigate();
   const getArticle = async () => {
     return get(`${baseUrl}/articles/${id}`);
   };
@@ -128,6 +130,16 @@ function ArticleContent() {
           </div>
         </AvatarCard>
 
+        {(userContext?.isPreview || userContext?.isAuthenticated) && (
+          <Button
+            variant="text"
+            size="sm"
+            onClick={() => nav(`/articles/edit/${id}`)}
+            className="-mb-4 mt-4 underline"
+          >
+            Edit Post
+          </Button>
+        )}
         <hr className="my-8" />
 
         {outputData.blocks.map((block) => renderBlock(block))}

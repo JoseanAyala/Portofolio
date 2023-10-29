@@ -19,7 +19,7 @@ export default function ArticleSection() {
   if (isLoading)
     return Array(4)
       .fill(0)
-      .map((_, i) => <CardSkeleton delay={`delay-${i * 100}`} />);
+      .map((_, i) => <CardSkeleton key={i} delay={`delay-${i * 100}`} />);
 
   if (error) return <div>There was an error: {error.message}</div>;
 

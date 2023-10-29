@@ -31,6 +31,9 @@ export default function Articles() {
           <ProfileCard />
         </div>
         <div className="w-full">
+          <Typography variant="h1" className="hidden">
+            View all articles
+          </Typography>
           {(isAuthenticated || userContext?.isPreview) && <CreateButton />}
           <ArticleGrid />
         </div>

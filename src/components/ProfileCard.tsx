@@ -47,7 +47,7 @@ export function ProfileCard() {
       <CardHeader floated={false} className="h-68">
         <img
           src="https://avatars.githubusercontent.com/u/36864389?v=4"
-          alt="Profile Image"
+          alt="Picture of the author"
         />
       </CardHeader>
       <CardBody className="text-center">
@@ -95,7 +95,7 @@ export function AvatarCard({
         <Avatar
           size={size}
           src="https://avatars.githubusercontent.com/u/36864389?v=4"
-          alt="Profile Image"
+          alt="Picture of the author"
         />
         {children}
       </CardHeader>

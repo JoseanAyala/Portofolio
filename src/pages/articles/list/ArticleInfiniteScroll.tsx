@@ -51,13 +51,14 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
           <div className="max-w-full rounded-lg p-4 shadow">
             <div className="p-5">
               <div className="flex items-center justify-start">
-                <Link to={`/articles/${article.id}`}>
-                  <h2 className="mb-2 inline-block text-2xl font-bold tracking-tight">
-                    {article.title}
-                  </h2>
-                </Link>
+                <h2 className="mb-2 inline-block text-2xl font-bold tracking-tight">
+                  {article.title}
+                </h2>
                 {(isAuthenticated || userContext?.isPreview) && (
-                  <Link to={`/articles/edit/${article.id}`}>
+                  <Link
+                    to={`/articles/edit/${article.id}`}
+                    aria-label={`Edit post #${article.id}`}
+                  >
                     <i className="fas fa-pencil-alt -translate-y-1 px-2 hover:scale-110"></i>
                   </Link>
                 )}

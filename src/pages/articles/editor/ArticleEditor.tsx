@@ -20,7 +20,7 @@ export default function ArticleEditor() {
   return (
     <>
       <StickyNavbar />
-      <div className="mx-auto px-6 py-12 md:px-12 lg:px-24">
+      <div className="container mx-auto px-6 py-12 md:px-12 lg:px-24">
         <Typography variant="h1" className="mb-4">
           {id ? "Edit Article" : "Create an Article"}
         </Typography>

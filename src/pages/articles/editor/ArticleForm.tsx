@@ -35,31 +35,23 @@ export default function ArticleForm({
   };
 
   const handleDelete = async () => {
-    const [_, err] = await del(`${baseUrl}/articles/delete/${articleData?.id}`);
-    if (err) return;
-
+    if (!articleData) return;
+    await del(`${baseUrl}/articles/delete/${articleData.id}`);
     nav(`/articles`);
   };
 
   const handlePublish = async () => {
     const payload = await buildPayload();
     if (!payload) return;
-
-    const [res, err] = await post(`${baseUrl}/articles/create`, payload);
-    if (err) return;
-
-    nav(`/articles/${res.id}`);
+    await post(`${baseUrl}/articles/create`, payload);
+    nav(`/articles`);
   };
 
   const handleEdit = async () => {
     const payload = await buildPayload();
-    if (!payload) return;
-
-    const [_, err] = await put(
-      `${baseUrl}/articles/edit/${articleData?.id}`,
-      payload,
-    );
-    nav(`/articles`);
+    if (!payload || !articleData) return;
+    await put(`${baseUrl}/articles/edit/${articleData.id}`, payload);
+    nav(`/articles/${articleData.id}`);
   };
 
   useEffect(() => {

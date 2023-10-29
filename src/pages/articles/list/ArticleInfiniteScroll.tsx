@@ -13,7 +13,6 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentArticles, setCurrentArticles] = useState<Article[]>([]);
   const pageSize = 8;
-
   const { isAuthenticated } = useAuth0();
   const userContext = useContext(UserContext);
 

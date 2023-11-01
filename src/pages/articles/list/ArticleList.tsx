@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import PopupAlert from "src/components/PopupAlert";
 export default function ArticleSection() {
   const { get, baseUrl } = useClient();
-  const [showLoadingMessage, setShowLoadingMessage] = useState(true);
+  const [showLoadingMessage, setShowLoadingMessage] = useState(false);
   const getArticles = async () => {
     return get(`${baseUrl}/articles`);
   };

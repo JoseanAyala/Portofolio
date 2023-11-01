@@ -10,7 +10,7 @@ function CreateButton() {
   return (
     <Link
       to={"/articles/create"}
-      className="group pointer-events-auto mb-4 flex w-full flex-col items-center  justify-center rounded-full bg-blue-gray-50 from-light-blue-50 to-blue-100 px-6 py-4 transition-all ease-in-out hover:bg-gradient-to-r lg:items-start"
+      className="group pointer-events-auto mb-4 flex w-full flex-col items-center  justify-center rounded-full bg-blue-gray-50 from-light-blue-50 to-blue-100 px-6 py-4 transition-all ease-in-out hover:bg-gradient-to-r dark:bg-gray-900 dark:hover:from-light-blue-800 dark:hover:to-deep-purple-900 lg:items-start"
     >
       <div className="flex items-center justify-center">
         <i className="fas fa-edit mr-4 h-5 w-5 lg:ml-4"></i>

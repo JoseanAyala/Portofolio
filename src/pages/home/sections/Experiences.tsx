@@ -11,22 +11,32 @@ export function SimpleCard({ experience }: { experience: Content }) {
   return (
     <Card
       shadow
-      className="w-full bg-blue-gray-50 from-light-blue-50 to-blue-100 transition-all hover:bg-gradient-to-r"
+      className="w-full bg-blue-gray-50 transition-all hover:bg-gradient-to-r hover:from-light-blue-50 hover:to-blue-100 dark:bg-gray-900 dark:hover:from-light-blue-800 dark:hover:to-deep-purple-900"
     >
       <CardBody>
-        <Typography variant="h4" color="blue-gray" className="mb-1">
+        <Typography
+          variant="h4"
+          color="blue-gray"
+          className="mb-1 dark:text-white"
+        >
           {experience.title}
         </Typography>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
+        <Typography
+          variant="h5"
+          color="blue-gray"
+          className="mb-2 dark:text-white"
+        >
           {experience.subTitle}
         </Typography>
-        <Typography color="blue-gray">{experience.description}</Typography>
+        <Typography color="blue-gray" className="dark:text-white">
+          {experience.description}
+        </Typography>
       </CardBody>
       <CardFooter className="pt-0">
         {experience.tags.map((tag, tagI) => (
           <Typography
             color="blue-gray"
-            className="mb-2 mr-1 inline-block rounded-full border-2 border-solid border-light-blue-700 px-3 py-2 text-sm"
+            className="mb-2 mr-1 inline-block rounded-full border-2 border-solid border-light-blue-700 px-3 py-2 text-sm dark:border-light-blue-300 dark:text-white"
             key={tagI}
           >
             {tag}
@@ -86,7 +96,7 @@ export default function Experiences() {
         textGradient
         variant="h3"
         color="light-blue"
-        className="text-4xl font-bold tracking-tight"
+        className="text-4xl font-bold tracking-tight dark:text-light-blue-300"
       >
         Experience
       </Typography>

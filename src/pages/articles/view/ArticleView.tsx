@@ -94,7 +94,7 @@ function ArticleContent() {
     return (
       <div>
         <CardSkeleton removeBorder />
-        <hr className="my-8" />
+        <hr className="dark:border-cod-gray-900 my-8" />
         <CardSkeleton removeBorder />
         <CardSkeleton removeBorder />
       </div>
@@ -122,7 +122,7 @@ function ArticleContent() {
                 Josean Ayala
               </Typography>
 
-              <Typography variant="small">
+              <Typography variant="small" className="dark:text-white">
                 {articleDate.toLocaleString("default", {
                   month: "long",
                 })}{" "}
@@ -140,12 +140,12 @@ function ArticleContent() {
             variant="text"
             size="sm"
             onClick={() => nav(`/articles/edit/${id}`)}
-            className="-mb-4 mt-4 underline"
+            className="-mb-4 mt-4 underline dark:text-white"
           >
             Edit Post
           </Button>
         )}
-        <hr className="my-8" />
+        <hr className="dark:border-cod-gray-900 my-8" />
 
         {outputData.blocks.map((block) => renderBlock(block))}
       </div>

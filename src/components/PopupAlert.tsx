@@ -42,6 +42,7 @@ export default function PopupAlert({
       color={color || "blue-gray"}
       variant={variant || "outlined"}
       animate={animate}
+      className="dark:text-white"
     >
       {message}
     </Alert>

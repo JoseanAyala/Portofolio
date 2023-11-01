@@ -159,7 +159,7 @@ const DeleteButton = ({ setShowError, setErrorMessage }: errorProps) => {
       variant="text"
       type="button"
       onClick={handleClick}
-      className="text-red-700"
+      className="text-red-700 dark:text-red-500"
     >
       Delete
     </Button>

@@ -28,13 +28,20 @@ export default function Profile() {
     <AvatarCard>
       <div className="flex w-full flex-col gap-0.5">
         <div className="flex items-center justify-between">
-          <Typography variant="h5" as="div" color="blue-gray">
+          <Typography
+            variant="h5"
+            as="div"
+            color="blue-gray"
+            className="dark:text-white"
+          >
             Josean Ayala
           </Typography>
         </div>
-        <Typography color="blue-gray">Software Engineer</Typography>
+        <Typography color="blue-gray" className="dark:text-white">
+          Software Engineer
+        </Typography>
         <div className="flex justify-start gap-4 p-0 pt-1">
-          <Socials size="fa-lg" />
+          <Socials color="text-light-blue-300" size="fa-lg" />
         </div>
       </div>
     </AvatarCard>
@@ -43,7 +50,7 @@ export default function Profile() {
 
 export function ProfileCard() {
   return (
-    <Card>
+    <Card className="dark:border-cod-gray-900 dark:border dark:bg-transparent ">
       <CardHeader floated={false} className="h-68">
         <img
           src="https://avatars.githubusercontent.com/u/36864389?v=4"
@@ -54,20 +61,20 @@ export function ProfileCard() {
         <Typography
           variant="h4"
           color="blue-gray"
-          className="mb-2 lg:text-xl xl:text-2xl"
+          className="mb-2 dark:text-white lg:text-xl xl:text-2xl"
         >
           Josean Ayala
         </Typography>
         <Typography
           color="blue-gray"
-          className="font-medium lg:text-sm xl:text-lg"
+          className="font-medium dark:text-white lg:text-sm xl:text-lg"
           textGradient
         >
           Software Engineer
         </Typography>
       </CardBody>
       <CardFooter className="flex items-center justify-center gap-4 pt-1">
-        <Socials />
+        <Socials color="text-light-blue-500" />
       </CardFooter>
     </Card>
   );

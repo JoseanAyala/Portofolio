@@ -28,28 +28,30 @@ h6.ce-header {
 .cdx-block {
   max-width: 100% !important;
 }
-/* 
-@media (prefers-color-scheme: dark) {
 
+@media (prefers-color-scheme: dark) {
   .ce-block {
     color: #f5f5f5;
   }
-
 
   .ce-toolbar__content {
     background-color: #2d2d2d;
   }
 
-
   .ce-toolbar__plus {
     color: #f5f5f5;
   }
 
+  .ce-toolbar__plus:hover {
+    background: #121212;
+  }
+  .ce-toolbar__settings-btn:hover {
+    background: #121212;
+  }
 
   .ce-block__content a {
     color: #f5f5f5;
   }
-
 
   .ce-block__content a:hover {
     color: #f5f5f5;
@@ -65,9 +67,9 @@ h6.ce-header {
     color: black;
   }
   .codex-editor ::selection {
-    background-color: theme("colors.primary.500") !important;
+    background-color: theme("colors.light-blue.500") !important;
   }
   .ce-block--selected .ce-block__content {
-    background-color: theme("colors.primary.500") !important;
+    background-color: theme("colors.light-blue.500") !important;
   }
-} */
+}

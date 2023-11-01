@@ -17,9 +17,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="icon" href="./assets/icon.png" />
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body
-    class="max-w-screen mx-auto min-w-[300px] bg-white font-sans text-blue-gray-900 transition-all dark:bg-black dark:text-white"
+    class="max-w-screen dark:bg-cod-gray-950 mx-auto min-w-[300px] bg-white font-sans text-blue-gray-900 transition-all dark:text-white"
   >
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

@@ -48,7 +48,7 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
     <ul className="grid grid-cols-1 gap-4 md:grid-cols-1">
       {currentArticles.map((article) => (
         <li key={article.id}>
-          <div className="max-w-full rounded-lg p-4 shadow">
+          <div className="dark:border-cod-gray-900 max-w-full rounded-lg p-4 shadow dark:border">
             <div className="p-5">
               <div className="flex items-center justify-start">
                 <h2 className="mb-2 inline-block text-2xl font-bold tracking-tight">
@@ -69,7 +69,8 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
               <Link to={`/articles/${article.id}`}>
                 <Button
                   variant="gradient"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500"
+                  tabIndex={-1}
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500 dark:from-light-blue-800 dark:to-deep-purple-900"
                 >
                   Read More{" "}
                   <svg

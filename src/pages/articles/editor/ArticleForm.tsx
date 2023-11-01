@@ -69,7 +69,7 @@ export default function ArticleForm({
           onChange={(e) => setTitle(e.target.value)}
           id="title-input"
           placeholder="Write a Title here..."
-          className="block w-full rounded-lg border border-gray-300 p-4 px-10 text-lg focus:border-blue-500 focus:ring-blue-500 "
+          className="dark:border-cod-gray-900 block w-full rounded-lg border border-gray-300 p-4 px-10 text-lg focus:border-blue-500 focus:ring-blue-500 dark:bg-transparent"
         />
       </div>
       <div className="mb-6">
@@ -84,7 +84,7 @@ export default function ArticleForm({
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows={4}
-          className="text-md block w-full rounded-lg border border-gray-300 px-10 py-4 focus:border-blue-500 focus:ring-blue-500"
+          className="text-md dark:border-cod-gray-900 block w-full rounded-lg border border-gray-300 px-10 py-4 focus:border-blue-500 focus:ring-blue-500  dark:bg-transparent"
           placeholder="Write a description here..."
         ></textarea>
       </div>
@@ -95,7 +95,7 @@ export default function ArticleForm({
         <div
           id="editor"
           aria-labelledby="editorLabel"
-          className="pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg border py-4"
+          className="dark:border-cod-gray-900 pointer-events-auto block h-96 w-full overflow-y-auto rounded-lg border py-4 dark:bg-transparent"
         />
       </div>
 

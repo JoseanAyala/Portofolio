@@ -6,14 +6,14 @@ export default function KnowMore() {
     <section className="mb-12" aria-label="Know more">
       <Link
         to={"/articles"}
-        className="group pointer-events-auto flex w-full flex-col items-start justify-center rounded-3xl bg-blue-gray-50 from-light-blue-50 to-blue-100 p-6 hover:bg-gradient-to-r"
+        className="group pointer-events-auto flex w-full flex-col items-start justify-center rounded-3xl bg-blue-gray-50 from-light-blue-50 to-blue-100 p-6 hover:bg-gradient-to-r dark:bg-gray-900 dark:hover:from-light-blue-800 dark:hover:to-deep-purple-900"
       >
         <div className="item-center flex">
-          <Typography color="blue-gray" className="font-normal">
+          <Typography color="blue-gray" className="font-normal dark:text-white">
             Check out my articles
           </Typography>
           <svg
-            className="ml-2 mt-1 h-4 w-4 text-blue-gray-700"
+            className="ml-2 mt-1 h-4 w-4 text-blue-gray-700 dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -31,7 +31,7 @@ export default function KnowMore() {
         <Typography
           variant="h3"
           color="light-blue"
-          className="text-2xl font-bold tracking-tight group-hover:text-light-blue-700"
+          className="text-2xl font-bold tracking-tight group-hover:text-light-blue-700 dark:text-light-blue-300 dark:group-hover:text-light-blue-100"
           textGradient
         >
           Want to know more?

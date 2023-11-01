@@ -129,7 +129,7 @@ function ArticleContent() {
                 {articleDate.getDate()} {articleDate.getFullYear()}
               </Typography>
               <div className="flex justify-start gap-4 p-0.5">
-                <Socials size="fa-lg" />
+                <Socials color="text-light-blue-500" size="fa-lg" />
               </div>
             </div>
           </div>

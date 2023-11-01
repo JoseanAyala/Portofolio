@@ -70,7 +70,7 @@ export default function ArticleInfiniteScroll({ articleList }: Props) {
                 <Button
                   variant="gradient"
                   tabIndex={-1}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500 dark:from-light-blue-800 dark:to-deep-purple-900"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-light-blue-400 to-blue-500 dark:from-light-blue-500 dark:to-blue-800"
                 >
                   Read More{" "}
                   <svg

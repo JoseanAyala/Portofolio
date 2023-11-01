@@ -41,7 +41,7 @@ export default function Profile() {
           Software Engineer
         </Typography>
         <div className="flex justify-start gap-4 p-0 pt-1">
-          <Socials color="text-light-blue-300" size="fa-lg" />
+          <Socials color="text-light-blue-500" size="fa-lg" />
         </div>
       </div>
     </AvatarCard>

@@ -6,6 +6,8 @@ interface UserContextType {
   setUser: React.Dispatch<React.SetStateAction<User | undefined>>;
   isPreview: boolean;
   setIsPreview: React.Dispatch<React.SetStateAction<boolean>>;
+  isDarkMode?: boolean;
+  renderAll: React.Dispatch<React.SetStateAction<number>>;
 }
 
 type UserContextProps = {
@@ -19,8 +21,12 @@ export const UserContext = createContext<UserContextType | undefined>(
 export const UserContextProvider = ({ children }: UserContextProps) => {
   const [user, setUser] = useState<User | undefined>(undefined);
   const [isPreview, setIsPreview] = useState(false);
+  const [, renderAll] = useState(0);
+
   return (
-    <UserContext.Provider value={{ user, setUser, isPreview, setIsPreview }}>
+    <UserContext.Provider
+      value={{ user, setUser, isPreview, setIsPreview, renderAll }}
+    >
       {children}
     </UserContext.Provider>
   );

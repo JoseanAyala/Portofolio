@@ -29,47 +29,64 @@ h6.ce-header {
   max-width: 100% !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  .ce-block {
-    color: #f5f5f5;
-  }
+.cdx-notify--error {
+  background: #fb5d5d !important;
+}
 
-  .ce-toolbar__content {
-    background-color: #2d2d2d;
-  }
+.ce-popover-item--active {
+  background-color: #fff !important;
+}
 
-  .ce-toolbar__plus {
-    color: #f5f5f5;
-  }
+.cdx-notify__cross::after,
+.cdx-notify__cross::before {
+  background: transparent;
+}
 
-  .ce-toolbar__plus:hover {
-    background: #121212;
-  }
-  .ce-toolbar__settings-btn:hover {
-    background: #121212;
-  }
+.ce-inline-tool,
+.ce-conversion-toolbar__label,
+.ce-toolbox__button,
+.cdx-settings-button,
+.ce-toolbar__plus {
+  color: inherit;
+}
 
-  .ce-block__content a {
-    color: #f5f5f5;
-  }
+.ce-conversion-tool__icon {
+  color: black !important;
+}
 
-  .ce-block__content a:hover {
-    color: #f5f5f5;
-    text-decoration: underline;
-  }
-  .ce-toolbar__settings-btn svg {
-    color: #f5f5f5 !important;
-  }
-  .ce-inline-toolbar__toggler-and-button-wrapper {
-    color: #000 !important;
-  }
-  .ce-conversion-toolbar__tools {
-    color: black;
-  }
-  .codex-editor ::selection {
-    background-color: theme("colors.light-blue.500") !important;
-  }
-  .ce-block--selected .ce-block__content {
-    background-color: theme("colors.light-blue.500") !important;
-  }
+/* Set theme colors */
+
+.ce-toolbar__settings-btn {
+  background: var(--editor-settings);
+  color: inherit;
+}
+
+.ce-block--selected .ce-block__content,
+.ce-inline-toolbar,
+.codex-editor--narrow .ce-toolbox,
+.ce-conversion-toolbar,
+.ce-settings,
+.ce-settings__button,
+.cdx-button,
+.ce-popover,
+.ce-toolbar__plus:hover {
+  background: var(--editor-bg);
+  color: inherit;
+}
+
+::selection {
+  background: var(--editor-selection) !important;
+}
+
+.cdx-settings-button:hover,
+.ce-settings__button:hover,
+.ce-toolbox__button--active,
+.ce-toolbox__button:hover,
+.cdx-button:hover,
+.ce-inline-toolbar__dropdown:hover,
+.ce-inline-tool:hover,
+.ce-popover__item:hover,
+.ce-toolbar__settings-btn:hover {
+  background-color: var(--editor-bg);
+  color: inherit;
 }

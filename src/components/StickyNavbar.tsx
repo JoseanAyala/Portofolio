@@ -132,7 +132,7 @@ export function StickyNavbar({ socialMode = false }) {
               )}
             </div>
             <div className="flex items-center gap-x-1">
-              <hr className="mx-2 h-8 border-r border-black/10  dark:border-white/10" />
+              <hr className="mx-2 hidden h-8 border-r  border-black/10 dark:border-white/10 lg:block" />
               <ToggleLightDarkMode />
             </div>
             <IconButton

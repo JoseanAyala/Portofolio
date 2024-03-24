@@ -28,15 +28,15 @@ export default function AboutMe() {
         Currently I'm a software engineer at{" "}
         <a
           className="pointer-events-auto underline hover:no-underline"
-          href="https://granicus.com/"
+          href="https://www.inkit.com//"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Granicus
+          Inkit
         </a>{" "}
-        working on a GovTech software product that impacts millions of lives.
-        I'm passionate about full stack development and I'm always looking for
-        opportunities to learn and grow as a software engineer.
+        working on fully customizable, low code, secure document generation
+        solution. I'm passionate about full stack development and I'm always
+        looking for opportunities to learn and grow as a software engineer.
       </Typography>
     </section>
   );

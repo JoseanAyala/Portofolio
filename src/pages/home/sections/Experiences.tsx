@@ -50,10 +50,20 @@ export function SimpleCard({ experience }: { experience: Content }) {
 export default function Experiences() {
   const experiences: Content[] = [
     {
+      title: "Frontend Engineer",
+      subTitle: "Inkit",
+      href: "https://www.inkit.com/",
+      date: "2024 - Present",
+      description: `Developing a highly customizable Secure Document Generation
+    product with Department of Defense (DoD) Impact Level 4 (IL4) certification.
+    Creating world-class mobile friendly user interfaces that simplify user experience.`,
+      tags: ["React", "TypeScript", "Styled Components", "CSS"],
+    },
+    {
       title: "Software Engineer 3",
       subTitle: "Granicus",
       href: "https://granicus.com/solution/govservice/",
-      date: "2020 - Present",
+      date: "2020 - 2023",
       description: `Developed and maintained a highly available B2B SaaS
     product with a potential to impact millions of users,
     while effectively collaborating with cross-functional

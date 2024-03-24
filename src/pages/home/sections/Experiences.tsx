@@ -56,8 +56,8 @@ export default function Experiences() {
       date: "2024 - Present",
       description: `Developing a highly customizable Secure Document Generation
     product with Department of Defense (DoD) Impact Level 4 (IL4) certification.
-    Creating world-class mobile friendly user interfaces that simplify user experience.`,
-      tags: ["React", "TypeScript", "Styled Components", "CSS"],
+    Creating world-class mobile-responsive interfaces that streamline user workflows.`,
+      tags: ["React", "TypeScript", "CSS", "Styled Components"],
     },
     {
       title: "Software Engineer 3",
